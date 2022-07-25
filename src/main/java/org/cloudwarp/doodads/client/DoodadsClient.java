@@ -8,6 +8,7 @@ import net.minecraft.util.Identifier;
 import org.cloudwarp.doodads.Doodads;
 import org.cloudwarp.doodads.client.renderer.PebbleEntityRenderer;
 import org.cloudwarp.doodads.registry.DEntities;
+import org.cloudwarp.doodads.registry.DModelPredicateProvider;
 
 @Environment(EnvType.CLIENT)
 public class DoodadsClient implements ClientModInitializer {
@@ -15,5 +16,6 @@ public class DoodadsClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient () {
 		EntityRendererRegistry.register(DEntities.PEBBLE_ENTITY, PebbleEntityRenderer::new);
+		DModelPredicateProvider.init();
 	}
 }

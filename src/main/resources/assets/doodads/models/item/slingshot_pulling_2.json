@@ -1,0 +1,6 @@
+{
+  "parent": "doodads:item/slingshot",
+  "textures": {
+    "layer0": "doodads:item/slingshot_pulling_2"
+  }
+}

@@ -89,6 +89,13 @@ public class SlingShotItem extends BowItem {
 			}
 		}
 	}
+	public static float getPullProgress(int useTicks) {
+		float f = (float)useTicks / 20.0f;
+		if ((f = (f * f + f * 2.0f) / 3.0f) > 1.0f) {
+			f = 1.0f;
+		}
+		return f;
+	}
 	@Override
 	public int getMaxUseTime(ItemStack stack) {
 		return 72000;
@@ -96,7 +103,7 @@ public class SlingShotItem extends BowItem {
 
 	@Override
 	public UseAction getUseAction(ItemStack stack) {
-		return UseAction.SPEAR;
+		return UseAction.BOW;
 	}
 
 	@Override
