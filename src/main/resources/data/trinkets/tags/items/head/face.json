@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "doodads:beaver_teeth"
+    "doodads:beaver_teeth",
+    "doodads:ender_goggles"
   ]
 }

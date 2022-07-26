@@ -9,6 +9,8 @@ import net.minecraft.util.registry.Registry;
 import org.cloudwarp.doodads.item.PebbleItem;
 import org.cloudwarp.doodads.item.SlingShotItem;
 import org.cloudwarp.doodads.trinket.BeaverTeeth;
+import org.cloudwarp.doodads.trinket.EnderGoggles;
+
 import static org.cloudwarp.doodads.utils.DoodadsItemTypes.*;
 
 import java.util.HashMap;
@@ -31,6 +33,7 @@ public class DItems {
 		registerItem(SLINGSHOT.name, new SlingShotItem(new Item.Settings().group(DOODADS_GROUP).maxDamage(640), SLINGSHOT));
 		registerItem(PEBBLE.name, new PebbleItem(new Item.Settings().group(DOODADS_GROUP).maxCount(PEBBLE.maxCount), PEBBLE));
 		registerItem(BEAVER_TEETH.name, new BeaverTeeth(new Item.Settings().group(DOODADS_GROUP).maxCount(1)));
+		registerItem(ENDER_GOGGLES.name, new EnderGoggles(new Item.Settings().group(DOODADS_GROUP).maxCount(1)));
 	}
 
 	public static Item get (String id) {
