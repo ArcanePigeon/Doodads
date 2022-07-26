@@ -24,6 +24,7 @@ public class Doodads implements ModInitializer {
 		AutoConfig.register(DConfig.class, Toml4jConfigSerializer::new);
 		configHolder = AutoConfig.getConfigHolder(DConfig.class);
 		DEntities.init();
+		DParticles.init();
 		DItems.registerItems();
 	}
 

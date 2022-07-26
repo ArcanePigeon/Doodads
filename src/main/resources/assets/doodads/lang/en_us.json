@@ -1,3 +1,7 @@
 {
-  "itemGroup.doodads.general": "Doodads"
+  "itemGroup.doodads.general": "Doodads",
+  "item.doodads.pebble": "Pebble",
+  "item.doodads.slingshot": "Slingshot",
+  "item.doodads.generic_tooltip": "Press §eSHIFT§r for more Information",
+  "death.attack.pebble": "%1$s was hit with a pebble by %2$s"
 }

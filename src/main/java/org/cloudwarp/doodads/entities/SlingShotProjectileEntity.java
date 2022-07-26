@@ -46,6 +46,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import org.cloudwarp.doodads.registry.DDamageSource;
+import org.cloudwarp.doodads.registry.DParticles;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Arrays;
@@ -123,9 +124,14 @@ public abstract class SlingShotProjectileEntity extends ProjectileEntity {
 			} else if (blockState.isIn(ConventionalBlockTags.GLASS_BLOCKS) || blockState.isIn(ConventionalBlockTags.GLASS_PANES)) {
 				this.world.breakBlock(blockPos,false,this);
 				bl = false;
+			}else if (blockState.isOf(Blocks.POWDER_SNOW)) {
+				this.extinguish();
+				bl = true;
 			}
 		}
-
+		if (this.isTouchingWaterOrRain()) {
+			this.extinguish();
+		}
 		if (hitResult.getType() != HitResult.Type.MISS && !bl) {
 			this.onCollision(hitResult);
 		}
@@ -220,8 +226,6 @@ public abstract class SlingShotProjectileEntity extends ProjectileEntity {
 
 
 			}
-
-			this.playSound(this.sound, 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
 			this.discard();
 		} else {
 			entity.setFireTicks(j);
@@ -234,12 +238,12 @@ public abstract class SlingShotProjectileEntity extends ProjectileEntity {
 		}
 	}
 	protected float getGravity() {
-		return 0.025F;
+		return 0.04F;
 	}
 	protected void onHit(LivingEntity target) {
 	}
 	protected SoundEvent getHitSound() {
-		return SoundEvents.ENTITY_ARROW_HIT;
+		return SoundEvents.BLOCK_STONE_BREAK;
 	}
 
 	protected final SoundEvent getSound() {
@@ -386,7 +390,7 @@ public abstract class SlingShotProjectileEntity extends ProjectileEntity {
 
 	private ParticleEffect getParticleParameters() {
 		ItemStack itemStack = this.getItem();
-		return itemStack.isEmpty() ? ParticleTypes.ITEM_SNOWBALL : new ItemStackParticleEffect(ParticleTypes.ITEM, itemStack);
+		return itemStack.isEmpty() ? DParticles.PEBBLE_PARTICLE : new ItemStackParticleEffect(ParticleTypes.ITEM, itemStack);
 	}
 
 	@Override
@@ -404,6 +408,7 @@ public abstract class SlingShotProjectileEntity extends ProjectileEntity {
 		super.onCollision(hitResult);
 		if(!this.world.isClient){
 			this.world.sendEntityStatus(this, EntityStatuses.PLAY_DEATH_SOUND_OR_ADD_PROJECTILE_HIT_PARTICLES);
+			this.playSound(this.sound, 0.7F, 1.4F / (this.random.nextFloat() * 0.2F + 0.9F));
 			this.discard();
 		}
 	}

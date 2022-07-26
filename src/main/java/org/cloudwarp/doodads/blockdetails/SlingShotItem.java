@@ -128,14 +128,5 @@ public class SlingShotItem extends BowItem {
 		return 15;
 	}
 
-	@Override
-	public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-		if(Screen.hasShiftDown()){
-			tooltip.add(Text.translatable("item.doodads."+ doodadsItemType.id +".tooltip.shift"));
-		}else{
-			tooltip.add(Text.translatable("item.doodads.generic_tooltip"));
-		}
-	}
-
 }
 

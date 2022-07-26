@@ -47,6 +47,7 @@ public class PebbleItem extends Item {
 	public SlingShotProjectileEntity createPebble(World world, ItemStack stack, LivingEntity shooter) {
 		PebbleEntity pebbleEntity = new PebbleEntity(world, shooter);
 		return pebbleEntity;
+
 	}
 
 }
