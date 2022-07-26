@@ -6,10 +6,8 @@ import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import org.cloudwarp.doodads.item.PebbleItem;
-import org.cloudwarp.doodads.item.SlingShotItem;
-import org.cloudwarp.doodads.trinket.BeaverTeeth;
-import org.cloudwarp.doodads.trinket.EnderGoggles;
+import org.cloudwarp.doodads.item.*;
+import org.cloudwarp.doodads.trinket.*;
 
 import static org.cloudwarp.doodads.utils.DoodadsItemTypes.*;
 
@@ -34,6 +32,7 @@ public class DItems {
 		registerItem(PEBBLE.name, new PebbleItem(new Item.Settings().group(DOODADS_GROUP).maxCount(PEBBLE.maxCount), PEBBLE));
 		registerItem(BEAVER_TEETH.name, new BeaverTeeth(new Item.Settings().group(DOODADS_GROUP).maxCount(1)));
 		registerItem(ENDER_GOGGLES.name, new EnderGoggles(new Item.Settings().group(DOODADS_GROUP).maxCount(1)));
+		registerItem(SPEED_BOOTS.name, new SpeedBoots(new Item.Settings().group(DOODADS_GROUP).maxCount(1)));
 	}
 
 	public static Item get (String id) {

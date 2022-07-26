@@ -10,6 +10,7 @@ public enum DoodadsItemTypes {
 	SLINGSHOT(1,"slingshot"),
 	PEBBLE(64,"pebble"),
 	BEAVER_TEETH(1,"beaver_teeth"),
+	SPEED_BOOTS(1,"speed_boots"),
 	ENDER_GOGGLES(1,"ender_goggles");
 
 	public final int maxCount;
