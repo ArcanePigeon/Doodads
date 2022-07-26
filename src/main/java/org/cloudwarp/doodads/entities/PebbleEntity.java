@@ -10,6 +10,8 @@ import net.minecraft.world.World;
 import org.cloudwarp.doodads.registry.DEntities;
 import org.cloudwarp.doodads.registry.DItems;
 
+import static org.cloudwarp.doodads.utils.DoodadsItemTypes.PEBBLE;
+
 
 public class PebbleEntity extends SlingShotProjectileEntity {
 	public PebbleEntity(EntityType<? extends PebbleEntity> entityType, World world) {
@@ -30,7 +32,7 @@ public class PebbleEntity extends SlingShotProjectileEntity {
 
 	@Override
 	protected Item getDefaultItem () {
-		return DItems.get("pebble");
+		return PEBBLE.item();
 	}
 
 }

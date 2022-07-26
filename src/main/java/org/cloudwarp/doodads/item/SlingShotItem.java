@@ -1,7 +1,5 @@
-package org.cloudwarp.doodads.blockdetails;
+package org.cloudwarp.doodads.item;
 
-import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.item.TooltipContext;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.LivingEntity;
@@ -10,8 +8,6 @@ import net.minecraft.item.*;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
-import net.minecraft.tag.ItemTags;
-import net.minecraft.text.Text;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
@@ -20,14 +16,14 @@ import org.cloudwarp.doodads.entities.SlingShotProjectileEntity;
 import org.cloudwarp.doodads.interfaces.PlayerEntityInterface;
 import org.cloudwarp.doodads.registry.DItems;
 import org.cloudwarp.doodads.utils.DoodadsItemTypes;
-import org.jetbrains.annotations.Nullable;
 
-import java.util.List;
 import java.util.function.Predicate;
+
+import static org.cloudwarp.doodads.utils.DoodadsItemTypes.PEBBLE;
 
 public class SlingShotItem extends BowItem {
 	public DoodadsItemTypes doodadsItemType;
-	public static final Predicate<ItemStack> SLINGSHOT_PROJECTILES = stack -> stack.isOf(DItems.get("pebble"));
+	public static final Predicate<ItemStack> SLINGSHOT_PROJECTILES = stack -> stack.isOf(PEBBLE.item());
 
 	public SlingShotItem (Settings settings, DoodadsItemTypes doodadsItemType) {
 		super(settings);
@@ -40,15 +36,15 @@ public class SlingShotItem extends BowItem {
 			ItemStack itemStack = ((PlayerEntityInterface)playerEntity).getPebbleType(stack);
 			if (!itemStack.isEmpty() || bl) {
 				if (itemStack.isEmpty()) {
-					itemStack = new ItemStack(DItems.get("pebble"));
+					itemStack = PEBBLE.itemStack();
 				}
 
 				int i = this.getMaxUseTime(stack) - remainingUseTicks;
 				float f = getPullProgress(i);
 				if (!((double)f < 0.1)) {
-					boolean bl2 = bl && itemStack.isOf(DItems.get("pebble"));
+					boolean bl2 = bl && itemStack.isOf(PEBBLE.item());
 					if (!world.isClient) {
-						PebbleItem PebbleItem = (PebbleItem)(itemStack.getItem() instanceof PebbleItem ? itemStack.getItem() : DItems.get("pebble"));
+						PebbleItem PebbleItem = (PebbleItem)(itemStack.getItem() instanceof PebbleItem ? itemStack.getItem() : PEBBLE.item());
 						SlingShotProjectileEntity slingShotProjectileEntity = PebbleItem.createPebble(world, itemStack, playerEntity);
 						slingShotProjectileEntity.setVelocity(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 0.0F, f * 3.0F, 1.0F);
 						if (f == 1.0F) {

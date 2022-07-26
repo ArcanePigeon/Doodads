@@ -1,20 +1,22 @@
 package org.cloudwarp.doodads.registry;
 
+import dev.emi.trinkets.api.TrinketItem;
+import dev.emi.trinkets.api.TrinketsApi;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-import org.cloudwarp.doodads.blockdetails.DoodadsItem;
-import org.cloudwarp.doodads.blockdetails.PebbleItem;
-import org.cloudwarp.doodads.blockdetails.SlingShotItem;
-import org.cloudwarp.doodads.utils.DoodadsItemTypes;
+import org.cloudwarp.doodads.item.PebbleItem;
+import org.cloudwarp.doodads.item.SlingShotItem;
+import org.cloudwarp.doodads.trinket.BeaverTeeth;
+import static org.cloudwarp.doodads.utils.DoodadsItemTypes.*;
 
 import java.util.HashMap;
 
 public class DItems {
 	public static final ItemGroup DOODADS_GROUP = FabricItemGroupBuilder.create(
 					new Identifier("doodads", "general"))
-			.icon(() -> new ItemStack(get("slingshot")))
+			.icon(() -> SLINGSHOT.itemStack())
 			.build();
 	private static final HashMap<String, Item> ITEMS = new HashMap<>();
 
@@ -26,8 +28,9 @@ public class DItems {
 		if (! ITEMS.isEmpty()) {
 			return;
 		}
-		registerItem("slingshot", new SlingShotItem(new Item.Settings().group(DOODADS_GROUP).maxDamage(640), DoodadsItemTypes.SLINGSHOT));
-		registerItem("pebble", new PebbleItem(new Item.Settings().group(DOODADS_GROUP).maxCount(DoodadsItemTypes.PEBBLE.maxCount), DoodadsItemTypes.PEBBLE));
+		registerItem(SLINGSHOT.name, new SlingShotItem(new Item.Settings().group(DOODADS_GROUP).maxDamage(640), SLINGSHOT));
+		registerItem(PEBBLE.name, new PebbleItem(new Item.Settings().group(DOODADS_GROUP).maxCount(PEBBLE.maxCount), PEBBLE));
+		registerItem(BEAVER_TEETH.name, new BeaverTeeth(new Item.Settings().group(DOODADS_GROUP).maxCount(1)));
 	}
 
 	public static Item get (String id) {

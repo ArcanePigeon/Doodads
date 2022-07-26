@@ -2,6 +2,8 @@
   "itemGroup.doodads.general": "Doodads",
   "item.doodads.pebble": "Pebble",
   "item.doodads.slingshot": "Slingshot",
+  "item.doodads.beaver_teeth": "Beaver Teeth",
+  "item.doodads.beaver_teeth.tooltip.shift": "Instantly break wood and strip logs without an axe",
   "item.doodads.generic_tooltip": "Press §eSHIFT§r for more Information",
   "death.attack.pebble": "%1$s was hit with a pebble by %2$s"
 }
