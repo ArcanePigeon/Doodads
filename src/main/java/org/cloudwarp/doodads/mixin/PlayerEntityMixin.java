@@ -26,7 +26,7 @@ import java.util.function.Predicate;
 import static org.cloudwarp.doodads.utils.DoodadsItemTypes.*;
 
 @Mixin(PlayerEntity.class)
-public abstract class PlayerEntityMixin extends LivingEntity implements PlayerEntityInterface {
+public abstract class PlayerEntityMixin extends LivingEntityMixin implements PlayerEntityInterface {
 
 	@Shadow
 	@Final
@@ -45,7 +45,7 @@ public abstract class PlayerEntityMixin extends LivingEntity implements PlayerEn
 			return ItemStack.EMPTY;
 		}
 		Predicate<ItemStack> predicate = ((SlingShotItem)stack.getItem()).getHeldProjectiles();
-		ItemStack itemStack = SlingShotItem.getHeldProjectile(this, predicate);
+		ItemStack itemStack = SlingShotItem.getHeldProjectile((PlayerEntity)(Object)this, predicate);
 		if (!itemStack.isEmpty()) {
 			return itemStack;
 		}
