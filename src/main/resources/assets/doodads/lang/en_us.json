@@ -8,6 +8,8 @@
   "item.doodads.ender_goggles.tooltip.shift": "Look at enderman without making them angry",
   "item.doodads.speed_boots": "Speedy Sneakers",
   "item.doodads.speed_boots.tooltip.shift": "Run very fast",
+  "item.doodads.bendy_straw": "Bendy Straw",
+  "item.doodads.bendy_straw.tooltip.shift": "Makes potions last longer",
   "item.doodads.generic_tooltip": "Press §eSHIFT§r for more Information",
   "death.attack.pebble": "%1$s was hit with a pebble by %2$s"
 }
