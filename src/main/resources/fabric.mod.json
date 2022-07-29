@@ -26,6 +26,9 @@
     ],
     "modmenu": [
       "org.cloudwarp.doodads.utils.DModMenu"
+    ],
+    "fabric-datagen": [
+      "org.cloudwarp.doodads.registry.DDataGeneratorEntrypoint"
     ]
   },
   "mixins": [

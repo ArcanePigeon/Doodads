@@ -13,6 +13,7 @@ public enum DoodadsItemTypes {
 	SPEED_BOOTS(1,"speed_boots"),
 	BENDY_STRAW(1,"bendy_straw"),
 	MAGIC_PLUM(1,"magic_plum"),
+	PAINTBRUSH(1,"paintbrush"),
 	ENDER_GOGGLES(1,"ender_goggles");
 
 	public final int maxCount;
