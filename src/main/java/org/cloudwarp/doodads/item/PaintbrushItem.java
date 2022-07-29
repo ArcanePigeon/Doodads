@@ -52,15 +52,17 @@ public class PaintbrushItem extends Item {
 		BlockPos pos = context.getBlockPos();
 		BlockState state = world.getBlockState(pos);
 		PlayerEntity player = context.getPlayer();
+		ItemStack itemStack = context.getStack();
 		PaintbrushColors color;
 		color = PaintbrushColors.getFromDye(player.getMainHandStack().getItem());
+		boolean success = false;
 		if (state.isIn(BlockTags.WOOL)) {
 			if (world.isClient) {
 				playSound(world, player, pos);
 				return ActionResult.SUCCESS;
 			}
 			world.setBlockState(pos, color.wool.getDefaultState());
-			return ActionResult.SUCCESS;
+			success = true;
 		} else if (state.isIn(BlockTags.BANNERS)) {
 			if (world.isClient) {
 				playSound(world, player, pos);
@@ -71,35 +73,35 @@ public class PaintbrushItem extends Item {
 			} else {
 				world.setBlockState(pos, color.banner.getDefaultState().with(BannerBlock.ROTATION, state.get(BannerBlock.ROTATION)));
 			}
-			return ActionResult.SUCCESS;
+			success = true;
 		} else if (state.isIn(BlockTags.WOOL_CARPETS)) {
 			if (world.isClient) {
 				playSound(world, player, pos);
 				return ActionResult.SUCCESS;
 			}
 			world.setBlockState(pos, color.carpet.getDefaultState());
-			return ActionResult.SUCCESS;
+			success = true;
 		} else if (state.isIn(DTagKeys.CONCRETES)) {
 			if (world.isClient) {
 				playSound(world, player, pos);
 				return ActionResult.SUCCESS;
 			}
 			world.setBlockState(pos, color.concrete.getDefaultState());
-			return ActionResult.SUCCESS;
+			success = true;
 		} else if (state.isIn(BlockTags.TERRACOTTA)) {
 			if (world.isClient) {
 				playSound(world, player, pos);
 				return ActionResult.SUCCESS;
 			}
 			world.setBlockState(pos, color.terracotta.getDefaultState());
-			return ActionResult.SUCCESS;
+			success = true;
 		} else if (state.isIn(ConventionalBlockTags.GLASS_BLOCKS)) {
 			if (world.isClient) {
 				playSound(world, player, pos);
 				return ActionResult.SUCCESS;
 			}
 			world.setBlockState(pos, color.stainedGlass.getDefaultState());
-			return ActionResult.SUCCESS;
+			success = true;
 		} else if (state.isIn(ConventionalBlockTags.GLASS_PANES)) {
 			if (world.isClient) {
 				playSound(world, player, pos);
@@ -111,21 +113,21 @@ public class PaintbrushItem extends Item {
 					.with(HorizontalConnectingBlock.EAST, state.get(HorizontalConnectingBlock.EAST))
 					.with(HorizontalConnectingBlock.WEST, state.get(HorizontalConnectingBlock.WEST))
 					.with(HorizontalConnectingBlock.WATERLOGGED, state.get(HorizontalConnectingBlock.WATERLOGGED)));
-			return ActionResult.SUCCESS;
+			success = true;
 		} else if (state.isIn(DTagKeys.CONCRETE_POWDER)) {
 			if (world.isClient) {
 				playSound(world, player, pos);
 				return ActionResult.SUCCESS;
 			}
 			world.setBlockState(pos, color.concretePowder.getDefaultState());
-			return ActionResult.SUCCESS;
+			success = true;
 		} else if (state.isIn(DTagKeys.GLAZED_TERRACOTTA)) {
 			if (world.isClient) {
 				playSound(world, player, pos);
 				return ActionResult.SUCCESS;
 			}
 			world.setBlockState(pos, color.glazedTerracotta.getDefaultState().with(HorizontalFacingBlock.FACING, state.get(HorizontalFacingBlock.FACING)));
-			return ActionResult.SUCCESS;
+			success = true;
 		} else if (state.isIn(BlockTags.SHULKER_BOXES)) {
 			if (world.isClient) {
 				playSound(world, player, pos);
@@ -135,7 +137,7 @@ public class PaintbrushItem extends Item {
 			NbtCompound nbt = world.getBlockEntity(pos).createNbtWithIdentifyingData();
 			world.setBlockState(pos, newShulker);
 			world.getBlockEntity(pos).readNbt(nbt);
-			return ActionResult.SUCCESS;
+			success = true;
 		} else if (state.isIn(BlockTags.BEDS)) {
 			if (world.isClient) {
 				playSound(world, player, pos);
@@ -156,7 +158,10 @@ public class PaintbrushItem extends Item {
 				world.setBlockState(pos, bed);
 				world.setBlockState(opposite, bedOpposite);
 			}
-
+			success = true;
+		}
+		if(success){
+			itemStack.damage(1, player, p -> p.sendToolBreakStatus(context.getHand()));
 			return ActionResult.SUCCESS;
 		}
 		return ActionResult.PASS;

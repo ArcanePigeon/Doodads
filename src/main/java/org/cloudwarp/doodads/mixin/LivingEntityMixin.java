@@ -47,6 +47,10 @@ public abstract class LivingEntityMixin extends Entity {
 	@Shadow public void onDeath(DamageSource damageSource) {}
 	@Shadow  public boolean isDead() {return false;}
 
+	@Shadow public abstract ItemStack getMainHandStack ();
+
+	@Shadow public abstract ItemStack getOffHandStack ();
+
 	private static final TrackedData<Boolean> HAS_MAGIC_PLUM = DataTracker.registerData(LivingEntityMixin.class, TrackedDataHandlerRegistry.BOOLEAN);
 
 	public LivingEntityMixin (EntityType<?> type, World world) {
@@ -87,28 +91,11 @@ public abstract class LivingEntityMixin extends Entity {
 		}
 		return false;
 	}
-
-	@Inject(method = "damage",
-			at = @At(value = "INVOKE",
-					target = "Lnet/minecraft/entity/LivingEntity;isDead()Z",
-					ordinal = 1,
-					shift = At.Shift.BEFORE))
-	private void magicPlumDeath(DamageSource source, float amount, CallbackInfoReturnable<Boolean> cir) {
-		if (this.isDead() && !this.tryUsePlum(source)) {
-			boolean regenBoolean = true;
-			if ((float)this.timeUntilRegen > 10.0f) {
-				regenBoolean = false;
-			}
-			SoundEvent soundEvent = this.getDeathSound();
-			if (regenBoolean && soundEvent != null) {
-				this.playSound(soundEvent, this.getSoundVolume(), this.getSoundPitch());
-			}
-			this.onDeath(source);
-		}
-	}
 	@Inject(method = "tryUseTotem", at = @At(value = "HEAD"), cancellable = true)
 	private void tryUseTotem(DamageSource source, CallbackInfoReturnable<Boolean> cir) {
-		cir.setReturnValue(false);
-		cir.cancel();
+		if(tryUsePlum(source)){
+			cir.setReturnValue(true);
+			cir.cancel();
+		}
 	}
 }

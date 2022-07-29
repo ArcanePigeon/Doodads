@@ -22,11 +22,7 @@ public class DoodadsItem extends Item {
 
 	@Override
 	public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-		if(Screen.hasShiftDown()){
-			tooltip.add(Text.translatable("item.doodads."+ doodadsItemType.name +".tooltip.shift"));
-		}else{
-			tooltip.add(Text.translatable("item.doodads.generic_tooltip"));
-		}
+		tooltip.add(Text.translatable("item.doodads."+ doodadsItemType.name +".tooltip"));
 	}
 
 }

@@ -186,9 +186,9 @@ public abstract class SlingShotProjectileEntity extends ProjectileEntity {
 		Entity entity2 = this.getOwner();
 		DamageSource damageSource;
 		if (entity2 == null) {
-			damageSource = new DDamageSource( "pebble", this,this);
+			damageSource = new DDamageSource.SlingshotDamageSource( "pebble", this,this);
 		} else {
-			damageSource = new DDamageSource( "pebble", this, entity2);
+			damageSource = new DDamageSource.SlingshotDamageSource( "pebble", this, entity2);
 			if (entity2 instanceof LivingEntity) {
 				((LivingEntity)entity2).onAttacking(entity);
 			}

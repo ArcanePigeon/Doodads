@@ -15,6 +15,11 @@
   "item.doodads.paintbrush": "Paintbrush",
   "item.doodads.paintbrush.tooltip.shift": "Hold a dye in your main hand and use the brush on a block dyeable block to change its color",
   "item.doodads.paintbrush.tooltip2.shift": "Using a water bucket instead of a dye will wash the block instead",
+  "item.doodads.scissors": "Scissors",
+  "item.doodads.scissors.tooltip": "Don't run with them",
   "item.doodads.generic_tooltip": "Press §eSHIFT§r for more Information",
-  "death.attack.pebble": "%1$s was hit with a pebble by %2$s"
+  "death.attack.pebble": "%1$s was hit with a pebble by %2$s",
+  "death.attack.pebble.item": "%1$s was hit with a pebble by %2$s using %3$s",
+  "death.attack.scissors": "%1$s ran with scissors",
+  "death.attack.scissors.item": "%1$s ran with %2$s"
 }
