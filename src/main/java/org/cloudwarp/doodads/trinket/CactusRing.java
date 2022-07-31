@@ -19,10 +19,6 @@ public class CactusRing extends TrinketItem {
 	}
 	@Override
 	public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-		if(Screen.hasShiftDown()){
-			tooltip.add(Text.translatable("item.doodads."+ CACTUS_RING.name +".tooltip.shift"));
-		}else{
-			tooltip.add(Text.translatable("item.doodads.generic_tooltip"));
-		}
+		tooltip.add(Text.translatable("item.doodads."+ CACTUS_RING.name +".tooltip"));
 	}
 }
