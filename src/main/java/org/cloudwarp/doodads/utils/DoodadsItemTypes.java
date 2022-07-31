@@ -24,6 +24,7 @@ public enum DoodadsItemTypes {
 	CACTUS_RING(1,"cactus_ring"),
 	MIDNIGHTS_EYE(1,"midnights_eye"),
 	GLARE_PLUSHIE(1,"glare_plushie"),
+	GLARE_STAFF(1,"glare_staff"),
 	ENDER_GOGGLES(1,"ender_goggles");
 
 	public final int maxCount;
