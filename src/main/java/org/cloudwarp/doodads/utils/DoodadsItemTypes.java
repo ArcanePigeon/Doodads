@@ -15,6 +15,7 @@ public enum DoodadsItemTypes {
 	MAGIC_PLUM(1,"magic_plum"),
 	PAINTBRUSH(1,"paintbrush"),
 	SCISSORS(1,"scissors"),
+	DUCT_TAPE(1,"duct_tape"),
 	ENDER_GOGGLES(1,"ender_goggles");
 
 	public final int maxCount;

@@ -19,6 +19,7 @@ import org.cloudwarp.doodads.registry.DItems;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -40,13 +41,13 @@ public abstract class PlayerEntityMixin extends LivingEntityMixin implements Pla
 
 	@Shadow
 	public abstract boolean damage (DamageSource source, float amount);
-
+	@Unique
 	private int ticksUntilScissorsDamage = 40;
 
 	protected PlayerEntityMixin (EntityType<? extends LivingEntity> entityType, World world) {
 		super(entityType, world);
 	}
-
+	@Unique
 	@Override
 	public ItemStack getPebbleType (ItemStack stack) {
 		if (! (stack.getItem() instanceof SlingShotItem)) {

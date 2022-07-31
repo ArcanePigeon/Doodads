@@ -26,6 +26,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -51,6 +52,7 @@ public abstract class LivingEntityMixin extends Entity {
 
 	@Shadow public abstract ItemStack getOffHandStack ();
 
+	@Unique
 	private static final TrackedData<Boolean> HAS_MAGIC_PLUM = DataTracker.registerData(LivingEntityMixin.class, TrackedDataHandlerRegistry.BOOLEAN);
 
 	public LivingEntityMixin (EntityType<?> type, World world) {
@@ -61,15 +63,15 @@ public abstract class LivingEntityMixin extends Entity {
 	protected void initDataTracker(CallbackInfo ci) {
 		this.dataTracker.startTracking(HAS_MAGIC_PLUM, false);
 	}
-
+	@Unique
 	public boolean hasPlum () {
 		return this.dataTracker.get(HAS_MAGIC_PLUM);
 	}
-
+	@Unique
 	public void setPlum(boolean hasPlum){
 		this.dataTracker.set(HAS_MAGIC_PLUM, hasPlum);
 	}
-
+	@Unique
 	private boolean tryUsePlum(DamageSource source) {
 		if (source.isOutOfWorld()) {
 			return false;
