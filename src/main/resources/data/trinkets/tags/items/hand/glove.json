@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "doodads:soggy_glove"
+    "doodads:soggy_glove",
+    "doodads:loggers_glove"
   ]
 }
