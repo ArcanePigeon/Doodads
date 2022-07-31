@@ -39,6 +39,8 @@
   "item.doodads.glare_plushie.tooltip": "Automatically places floating lights when it gets too dark",
   "item.doodads.glare_staff": "Glare Staff",
   "item.doodads.glare_staff.tooltip": "Places floating lights",
+  "item.doodads.shulker_aglet": "Shulker Aglet",
+  "item.doodads.shulker_aglet.tooltip": "Grants immunity to levitation",
   "item.doodads.generic_tooltip": "Press §eSHIFT§r for more Information",
   "block.doodads.glare_light": "Glare Light",
   "death.attack.pebble": "%1$s was hit with a pebble by %2$s",
