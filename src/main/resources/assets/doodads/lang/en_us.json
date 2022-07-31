@@ -41,6 +41,8 @@
   "item.doodads.glare_staff.tooltip": "Places floating lights",
   "item.doodads.shulker_aglet": "Shulker Aglet",
   "item.doodads.shulker_aglet.tooltip": "Grants immunity to levitation",
+  "item.doodads.blossom_belt": "Blossom Belt",
+  "item.doodads.blossom_belt.tooltip": "Grants immunity to poison",
   "item.doodads.generic_tooltip": "Press §eSHIFT§r for more Information",
   "block.doodads.glare_light": "Glare Light",
   "death.attack.pebble": "%1$s was hit with a pebble by %2$s",
