@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "doodads:speed_boots"
+    "doodads:speed_boots",
+    "doodads:slimey_shoes"
   ]
 }

@@ -3,6 +3,7 @@ package org.cloudwarp.doodads.mixin;
 import dev.emi.trinkets.api.TrinketComponent;
 import dev.emi.trinkets.api.TrinketsApi;
 import net.minecraft.advancement.criterion.Criteria;
+import net.minecraft.block.BlockState;
 import net.minecraft.enchantment.ThornsEnchantment;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityStatuses;
@@ -21,6 +22,8 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.Hand;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -161,4 +164,21 @@ public abstract class LivingEntityMixin extends Entity {
 			attacker.damage(DamageSource.thorns((LivingEntity) ((Object) this)), damage);
 		}
 	}
+	@Inject(method="getJumpVelocity", at = @At("RETURN"), cancellable = true)
+	public void getJumpVelocity(CallbackInfoReturnable<Float> cir){
+		TrinketComponent trinketComponent = TrinketsApi.getTrinketComponent((LivingEntity) ((Object) this)).get();
+		if(trinketComponent.isEquipped(SLIMEY_SHOES.item())){
+			cir.setReturnValue(cir.getReturnValueF() * 2f);
+		}
+	}
+
+	@Inject(method ="computeFallDamage", at = @At("RETURN"), cancellable = true)
+	public void computeFallDamage(float fallDistance, float damageMultiplier, CallbackInfoReturnable<Integer> cir){
+		TrinketComponent trinketComponent = TrinketsApi.getTrinketComponent((LivingEntity) ((Object) this)).get();
+		if(trinketComponent.isEquipped(SLIMEY_SHOES.item())){
+			cir.setReturnValue(0);
+		}
+	}
+
+
 }
