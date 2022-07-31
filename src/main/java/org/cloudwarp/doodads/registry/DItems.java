@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
+import org.cloudwarp.doodads.Doodads;
 import org.cloudwarp.doodads.item.*;
 import org.cloudwarp.doodads.trinket.*;
 
@@ -21,7 +22,7 @@ public class DItems {
 	private static final HashMap<String, Item> ITEMS = new HashMap<>();
 
 	private static void registerItem (String id, Item item) {
-		ITEMS.put(id, Registry.register(Registry.ITEM, "doodads:" + id, item));
+		ITEMS.put(id, Registry.register(Registry.ITEM, Doodads.id(id), item));
 	}
 
 	public static void registerItems () {
@@ -42,6 +43,7 @@ public class DItems {
 		registerItem(CELESTIAL_RING.name, new CelestialRing(new Item.Settings().group(DOODADS_GROUP).maxCount(1)));
 		registerItem(CACTUS_RING.name, new CactusRing(new Item.Settings().group(DOODADS_GROUP).maxCount(1)));
 		registerItem(MIDNIGHTS_EYE.name, new MidnightsEye(new Item.Settings().group(DOODADS_GROUP).maxCount(1)));
+		registerItem(GLARE_PLUSHIE.name, new GlarePlushie(new Item.Settings().group(DOODADS_GROUP).maxCount(1)));
 		registerItem(SCISSORS.name, new DoodadsItem(new Item.Settings().group(DOODADS_GROUP).maxCount(SCISSORS.maxCount), SCISSORS));
 		registerItem(DUCT_TAPE.name, new DuctTapeItem(new Item.Settings().group(DOODADS_GROUP).maxCount(DUCT_TAPE.maxCount), DUCT_TAPE));
 		registerItem(MAGIC_PLUM.name, new MagicPlum(new Item.Settings().group(DOODADS_GROUP).maxCount(1).food(DFoodComponents.MAGIC_PLUM_FOOD), MAGIC_PLUM));

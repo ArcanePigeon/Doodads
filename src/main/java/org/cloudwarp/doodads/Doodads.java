@@ -45,6 +45,7 @@ public class Doodads implements ModInitializer {
 		DEntities.init();
 		DParticles.init();
 		DItems.registerItems();
+		DBlocks.init();
 		UseBlockCallback.EVENT.register((player,world,hand,hitResult) ->
 		{
 

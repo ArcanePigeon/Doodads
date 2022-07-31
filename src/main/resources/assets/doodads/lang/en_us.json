@@ -33,6 +33,8 @@
   "item.doodads.cactus_ring.tooltip": "Damages your attacker",
   "item.doodads.midnights_eye": "Midnight's Eye",
   "item.doodads.midnights_eye.tooltip": "Grants night vision",
+  "item.doodads.glare_plushie": "Glare Plushie",
+  "item.doodads.glare_plushie.tooltip": "Places floating lights when it gets too dark",
   "item.doodads.generic_tooltip": "Press §eSHIFT§r for more Information",
   "death.attack.pebble": "%1$s was hit with a pebble by %2$s",
   "death.attack.pebble.item": "%1$s was hit with a pebble by %2$s using %3$s",

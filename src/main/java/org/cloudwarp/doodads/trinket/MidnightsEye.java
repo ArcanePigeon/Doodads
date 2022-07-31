@@ -39,11 +39,6 @@ public class MidnightsEye extends TrinketItem {
 				entity.setStatusEffect(nightVision,null);
 			}
 		}
-		//if (entity instanceof PlayerEntity player && !entity.world.isClient && entity.age % 10 == 0 &&
-		//		entity.world.getBlockState(entity.getBlockPos().down()).hasSolidTopSurface(entity.world,entity.getBlockPos().down(),entity) &&
-		//		entity.world.getLightLevel(LightType.BLOCK,entity.getBlockPos()) == 0) {
-		//	entity.world.setBlockState(entity.getBlockPos(), Blocks.TORCH.getDefaultState());
-		//}
 	}
 
 	@Override
