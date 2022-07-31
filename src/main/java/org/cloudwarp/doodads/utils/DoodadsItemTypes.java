@@ -18,6 +18,10 @@ public enum DoodadsItemTypes {
 	DUCT_TAPE(1,"duct_tape"),
 	SOGGY_GLOVE(1,"soggy_glove"),
 	LOGGERS_GLOVE(1,"loggers_glove"),
+	SUN_RING(1,"sun_ring"),
+	MOON_RING(1,"moon_ring"),
+	CELESTIAL_RING(1,"celestial_ring"),
+	CACTUS_RING(1,"cactus_ring"),
 	ENDER_GOGGLES(1,"ender_goggles");
 
 	public final int maxCount;
