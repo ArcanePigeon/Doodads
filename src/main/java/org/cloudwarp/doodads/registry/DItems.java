@@ -48,6 +48,7 @@ public class DItems {
 		registerItem(SHULKER_AGLET.name, new ShulkerAglet(new Item.Settings().group(DOODADS_GROUP).maxCount(1)));
 		registerItem(BLOSSOM_BELT.name, new BlossomBelt(new Item.Settings().group(DOODADS_GROUP).maxCount(1)));
 		registerItem(SCISSORS.name, new DoodadsItem(new Item.Settings().group(DOODADS_GROUP).maxCount(SCISSORS.maxCount), SCISSORS));
+		registerItem(RUBBER_BAND.name, new RubberBandItem(new Item.Settings().group(DOODADS_GROUP).maxCount(RUBBER_BAND.maxCount), RUBBER_BAND));
 		registerItem(GLARE_STAFF.name, new GlareStaffItem(new Item.Settings().group(DOODADS_GROUP).maxCount(GLARE_STAFF.maxCount), GLARE_STAFF));
 		registerItem(DUCT_TAPE.name, new DuctTapeItem(new Item.Settings().group(DOODADS_GROUP).maxCount(DUCT_TAPE.maxCount), DUCT_TAPE));
 		registerItem(MAGIC_PLUM.name, new MagicPlum(new Item.Settings().group(DOODADS_GROUP).maxCount(1).food(DFoodComponents.MAGIC_PLUM_FOOD), MAGIC_PLUM));

@@ -1,8 +1,6 @@
 package org.cloudwarp.doodads.entities;
 
-import io.netty.buffer.Unpooled;
 import net.fabricmc.fabric.api.tag.convention.v1.ConventionalBlockTags;
-import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.entity.BlockEntity;
@@ -16,17 +14,12 @@ import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.entity.projectile.ProjectileUtil;
-import net.minecraft.entity.projectile.thrown.ThrownEntity;
-import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtHelper;
 import net.minecraft.network.Packet;
-import net.minecraft.network.PacketByteBuf;
 import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.network.packet.s2c.play.GameStateChangeS2CPacket;
 import net.minecraft.particle.ItemStackParticleEffect;
@@ -48,8 +41,6 @@ import net.minecraft.world.World;
 import org.cloudwarp.doodads.registry.DDamageSource;
 import org.cloudwarp.doodads.registry.DParticles;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.Arrays;
 
 public abstract class SlingShotProjectileEntity extends ProjectileEntity {
 	private static final TrackedData<Byte> PROJECTILE_FLAGS;
@@ -186,9 +177,9 @@ public abstract class SlingShotProjectileEntity extends ProjectileEntity {
 		Entity entity2 = this.getOwner();
 		DamageSource damageSource;
 		if (entity2 == null) {
-			damageSource = new DDamageSource.SlingshotDamageSource( "pebble", this,this);
+			damageSource = new DDamageSource.DProjectileDamageSource( "pebble", this,this);
 		} else {
-			damageSource = new DDamageSource.SlingshotDamageSource( "pebble", this, entity2);
+			damageSource = new DDamageSource.DProjectileDamageSource( "pebble", this, entity2);
 			if (entity2 instanceof LivingEntity) {
 				((LivingEntity)entity2).onAttacking(entity);
 			}
@@ -204,8 +195,7 @@ public abstract class SlingShotProjectileEntity extends ProjectileEntity {
 			if (bl) {
 				return;
 			}
-			if (entity instanceof LivingEntity) {
-				LivingEntity livingEntity = (LivingEntity)entity;
+			if (entity instanceof LivingEntity livingEntity) {
 				if (this.punch > 0) {
 					double d = Math.max(0.0, 1.0 - livingEntity.getAttributeValue(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE));
 					Vec3d vec3d = this.getVelocity().multiply(1.0, 0.0, 1.0).normalize().multiply((double)this.punch * 0.6 * d);

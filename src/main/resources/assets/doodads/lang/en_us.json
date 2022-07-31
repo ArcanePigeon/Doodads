@@ -44,9 +44,14 @@
   "item.doodads.blossom_belt": "Blossom Belt",
   "item.doodads.blossom_belt.tooltip": "Grants immunity to poison",
   "item.doodads.generic_tooltip": "Press §eSHIFT§r for more Information",
+  "item.doodads.rubber_band": "Rubber Band",
   "block.doodads.glare_light": "Glare Light",
+  "entity.doodads.rubber_band": "Rubber Band",
+  "entity.doodads.pebble": "Pebble",
   "death.attack.pebble": "%1$s was hit with a pebble by %2$s",
   "death.attack.pebble.item": "%1$s was hit with a pebble by %2$s using %3$s",
+  "death.attack.rubber_band": "%1$s was thwacked with a rubber band by %2$s",
+  "death.attack.rubber_band.item": "%1$s was thwacked with %3$s by %2$s",
   "death.attack.scissors": "%1$s ran with scissors",
   "death.attack.scissors.item": "%1$s ran with %2$s"
 }

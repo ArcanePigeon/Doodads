@@ -16,6 +16,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.cloudwarp.doodads.Doodads;
 import org.cloudwarp.doodads.client.renderer.PebbleEntityRenderer;
+import org.cloudwarp.doodads.client.renderer.RubberBandEntityRenderer;
 import org.cloudwarp.doodads.particle.DCrackParticles;
 import org.cloudwarp.doodads.registry.DEntities;
 import org.cloudwarp.doodads.registry.DModelPredicateProvider;
@@ -28,6 +29,7 @@ public class DoodadsClient implements ClientModInitializer {
 	@Override
 	public void onInitializeClient () {
 		EntityRendererRegistry.register(DEntities.PEBBLE_ENTITY, PebbleEntityRenderer::new);
+		EntityRendererRegistry.register(DEntities.RUBBER_BAND_ENTITY, RubberBandEntityRenderer::new);
 		ParticleFactoryRegistry.getInstance().register(DParticles.PEBBLE_PARTICLE, new DCrackParticles.PebbleFactory());
 		DModelPredicateProvider.init();
 	}

@@ -29,11 +29,11 @@ public class DDamageSource extends EntityDamageSource {
 		}
 	}
 
-	public static class SlingshotDamageSource extends DDamageSource{
+	public static class DProjectileDamageSource extends DDamageSource{
 		@Nullable
 		private final Entity attacker;
 
-		public SlingshotDamageSource (String name, Entity projectile, @Nullable Entity attacker) {
+		public DProjectileDamageSource (String name, Entity projectile, @Nullable Entity attacker) {
 			super(name, projectile);
 			this.attacker = attacker;
 		}

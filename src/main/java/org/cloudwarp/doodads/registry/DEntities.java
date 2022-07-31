@@ -15,6 +15,7 @@ import static org.cloudwarp.doodads.Doodads.*;
 
 import org.cloudwarp.doodads.Doodads;
 import org.cloudwarp.doodads.entities.PebbleEntity;
+import org.cloudwarp.doodads.entities.RubberBandEntity;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -27,6 +28,11 @@ public class DEntities {
 			FabricEntityTypeBuilder.<PebbleEntity>create(SpawnGroup.MISC, PebbleEntity::new)
 					.dimensions(EntityDimensions.fixed(0.25F, 0.25F))
 					.trackRangeChunks(16)
+					.build());
+	public static final EntityType<RubberBandEntity> RUBBER_BAND_ENTITY = register("rubber_band",
+			FabricEntityTypeBuilder.<RubberBandEntity>create(SpawnGroup.MISC, RubberBandEntity::new)
+					.dimensions(EntityDimensions.fixed(0.25F, 0.25F))
+					.trackRangeChunks(4).trackedUpdateRate(20)
 					.build());
 
 	public static void init () {
