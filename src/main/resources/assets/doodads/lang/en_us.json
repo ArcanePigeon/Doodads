@@ -51,6 +51,8 @@
   "item.doodads.doodad_bundle.tooltip": "Contains a random doodad",
   "block.doodads.glare_light": "Glare Light",
   "block.doodads.platform": "Wooden Platform",
+  "block.doodads.asphalt": "Asphalt",
+  "block.doodads.stone_brick_road": "Stone Brick Road",
   "entity.doodads.rubber_band": "Rubber Band",
   "entity.doodads.pebble": "Pebble",
   "death.attack.pebble": "%1$s was hit with a pebble by %2$s",

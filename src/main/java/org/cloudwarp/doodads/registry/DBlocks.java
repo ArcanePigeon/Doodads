@@ -1,29 +1,23 @@
 package org.cloudwarp.doodads.registry;
 
-import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.Items;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.cloudwarp.doodads.Doodads;
+import org.cloudwarp.doodads.block.RoadBlock;
 import org.cloudwarp.doodads.block.GlareLight;
 import org.cloudwarp.doodads.block.PlatformBlock;
 import org.cloudwarp.doodads.item.*;
-import org.cloudwarp.doodads.trinket.*;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 import static org.cloudwarp.doodads.registry.DItems.DOODADS_GROUP;
-import static org.cloudwarp.doodads.utils.DoodadsItemTypes.*;
 
 public class DBlocks {
 	public static final Map<Block, Identifier> BLOCKS = new LinkedHashMap<>();
@@ -37,6 +31,15 @@ public class DBlocks {
 			.noCollision()
 			.dynamicBounds()
 			.sounds(BlockSoundGroup.WOOD)),false);
+	public static final Block ASPHALT          = create("asphalt", new RoadBlock(FabricBlockSettings.of(Material.STONE)
+			.hardness(3f)
+			.resistance(6f)
+			.sounds(BlockSoundGroup.STONE).requiresTool()),true);
+	public static final Block STONE_BRICK_ROAD          = create("stone_brick_road", new RoadBlock(FabricBlockSettings.of(Material.STONE)
+			.hardness(3f)
+			.resistance(6f)
+			.sounds(BlockSoundGroup.STONE).requiresTool()),true);
+
 
 	public static BlockItem PLATFORM_ITEM;
 

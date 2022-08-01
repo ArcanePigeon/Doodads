@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "doodads:block/stone_brick_road"
+  }
+}
