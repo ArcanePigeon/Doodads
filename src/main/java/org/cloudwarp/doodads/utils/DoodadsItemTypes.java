@@ -30,6 +30,7 @@ public enum DoodadsItemTypes {
 	BLOSSOM_BELT(1,"blossom_belt"),
 	RUBBER_BAND(16,"rubber_band"),
 	SPORE_SWORD(1,"spore_sword"),
+	DOODAD_BUNDLE(16,"doodad_bundle"),
 	ENDER_GOGGLES(1,"ender_goggles");
 
 	public final int maxCount;

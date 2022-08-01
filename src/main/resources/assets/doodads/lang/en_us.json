@@ -47,6 +47,8 @@
   "item.doodads.rubber_band": "Rubber Band",
   "item.doodads.spore_sword": "Spore Sword",
   "item.doodads.spore_sword.tooltip": "Poison your enemies",
+  "item.doodads.doodad_bundle": "Doodad Bundle",
+  "item.doodads.doodad_bundle.tooltip": "Contains a random doodad",
   "block.doodads.glare_light": "Glare Light",
   "entity.doodads.rubber_band": "Rubber Band",
   "entity.doodads.pebble": "Pebble",
