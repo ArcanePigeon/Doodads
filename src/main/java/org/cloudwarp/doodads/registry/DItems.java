@@ -1,7 +1,5 @@
 package org.cloudwarp.doodads.registry;
 
-import dev.emi.trinkets.api.TrinketItem;
-import dev.emi.trinkets.api.TrinketsApi;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
@@ -75,7 +73,7 @@ public class DItems {
 		registerItem(SHULKER_AGLET.name, new ShulkerAglet(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
 		registerItem(BLOSSOM_BELT.name, new BlossomBelt(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
 		registerItem(SCISSORS.name, new DoodadsItem(new Item.Settings().group(DOODADS_GROUP).maxCount(SCISSORS.maxCount), SCISSORS), true);
-		registerItem(DOODAD_BUNDLE.name, new DoodadBundle(new Item.Settings().group(DOODADS_GROUP).maxCount(DOODAD_BUNDLE.maxCount), DOODAD_BUNDLE), false);
+		registerItem(DOODAD_BUNDLE.name, new DoodadBundleItem(new Item.Settings().group(DOODADS_GROUP).maxCount(DOODAD_BUNDLE.maxCount), DOODAD_BUNDLE), false);
 		registerItem(RUBBER_BAND.name, new RubberBandItem(new Item.Settings().group(DOODADS_GROUP).maxCount(RUBBER_BAND.maxCount), RUBBER_BAND), false);
 		registerItem(GLARE_STAFF.name, new GlareStaffItem(new Item.Settings().group(DOODADS_GROUP).maxCount(GLARE_STAFF.maxCount), GLARE_STAFF), true);
 		registerItem(DUCT_TAPE.name, new DuctTapeItem(new Item.Settings().group(DOODADS_GROUP).maxCount(DUCT_TAPE.maxCount), DUCT_TAPE), true);

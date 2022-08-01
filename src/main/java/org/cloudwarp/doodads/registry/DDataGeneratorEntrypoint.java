@@ -2,10 +2,17 @@ package org.cloudwarp.doodads.registry;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
+import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.data.client.BlockStateModelGenerator;
+import net.minecraft.data.client.ItemModelGenerator;
+import net.minecraft.data.client.ModelIds;
+import net.minecraft.data.client.VariantsBlockStateSupplier;
+import net.minecraft.state.property.Properties;
 import net.minecraft.tag.TagKey;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.cloudwarp.doodads.Doodads;
 
@@ -24,6 +31,22 @@ public class DDataGeneratorEntrypoint implements DataGeneratorEntrypoint {
 		@Override
 		protected void generateTags () {
 			//this.getOrCreateTagBuilder(CONCRETES).add((Block[]) new Block[]{Blocks.WHITE_CONCRETE, Blocks.ORANGE_CONCRETE, Blocks.MAGENTA_CONCRETE, Blocks.LIGHT_BLUE_CONCRETE, Blocks.YELLOW_CONCRETE, Blocks.LIME_CONCRETE, Blocks.PINK_CONCRETE, Blocks.GRAY_CONCRETE, Blocks.LIGHT_GRAY_CONCRETE, Blocks.CYAN_CONCRETE, Blocks.PURPLE_CONCRETE, Blocks.BLUE_CONCRETE, Blocks.BROWN_CONCRETE, Blocks.GREEN_CONCRETE, Blocks.RED_CONCRETE, Blocks.BLACK_CONCRETE});
+		}
+	}
+	private static class DBlockStateModelProvider extends FabricModelProvider{
+
+		public DBlockStateModelProvider (FabricDataGenerator dataGenerator) {
+			super(dataGenerator);
+		}
+
+		@Override
+		public void generateBlockStateModels (BlockStateModelGenerator blockStateModelGenerator) {
+
+		}
+
+		@Override
+		public void generateItemModels (ItemModelGenerator itemModelGenerator) {
+
 		}
 	}
 }

@@ -3,12 +3,8 @@ package org.cloudwarp.doodads.item;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.BundleItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.nbt.NbtElement;
-import net.minecraft.nbt.NbtList;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
@@ -22,10 +18,10 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class DoodadBundle extends Item {
+public class DoodadBundleItem extends Item {
 	public DoodadsItemTypes doodadsItemType;
 
-	public DoodadBundle (Settings settings, DoodadsItemTypes doodadsItemType) {
+	public DoodadBundleItem (Settings settings, DoodadsItemTypes doodadsItemType) {
 		super(settings);
 		this.doodadsItemType = doodadsItemType;
 	}
@@ -39,7 +35,7 @@ public class DoodadBundle extends Item {
 	@Override
 	public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
 		ItemStack itemStack = user.getStackInHand(hand);
-		if (DoodadBundle.dropAllBundledItems(itemStack, user)) {
+		if (DoodadBundleItem.dropAllBundledItems(itemStack, user)) {
 			this.playDropContentsSound(user);
 			user.incrementStat(Stats.USED.getOrCreateStat(this));
 			return TypedActionResult.success(itemStack, world.isClient());

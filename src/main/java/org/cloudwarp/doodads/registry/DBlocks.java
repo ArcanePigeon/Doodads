@@ -14,6 +14,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.cloudwarp.doodads.Doodads;
 import org.cloudwarp.doodads.block.GlareLight;
+import org.cloudwarp.doodads.block.PlatformBlock;
 import org.cloudwarp.doodads.item.*;
 import org.cloudwarp.doodads.trinket.*;
 
@@ -25,13 +26,19 @@ import static org.cloudwarp.doodads.registry.DItems.DOODADS_GROUP;
 import static org.cloudwarp.doodads.utils.DoodadsItemTypes.*;
 
 public class DBlocks {
-	private static final Map<Block, Identifier> BLOCKS = new LinkedHashMap<>();
-	private static final Map<Item, Identifier> ITEMS = new LinkedHashMap<>();
+	public static final Map<Block, Identifier> BLOCKS = new LinkedHashMap<>();
+	public static final Map<Item, Identifier> ITEMS = new LinkedHashMap<>();
 
 	public static final Block GLARE_LIGHT      = create("glare_light", new GlareLight(FabricBlockSettings.of(Material.LEAVES)
 			.hardness(0f)
 			.resistance(0f)
 			.sounds(BlockSoundGroup.CAVE_VINES).breakInstantly().noCollision().nonOpaque().luminance(15)),false);
+	public static final Block PLATFORM         = create("platform", new PlatformBlock(FabricBlockSettings.of(Material.DECORATION)
+			.noCollision()
+			.dynamicBounds()
+			.sounds(BlockSoundGroup.WOOD)),false);
+
+	public static BlockItem PLATFORM_ITEM;
 
 	private static <T extends Block> T create (String name, T block, boolean createItem) {
 		BLOCKS.put(block, Doodads.id(name));
@@ -44,5 +51,8 @@ public class DBlocks {
 	public static void init () {
 		BLOCKS.keySet().forEach(block -> Registry.register(Registry.BLOCK, BLOCKS.get(block), block));
 		ITEMS.keySet().forEach(item -> Registry.register(Registry.ITEM, ITEMS.get(item), item));
+		PLATFORM_ITEM = new PlatformItem(PLATFORM,new Item.Settings().group(DOODADS_GROUP));
+		Registry.register(Registry.ITEM, Doodads.id("platform"),PLATFORM_ITEM);
+		ITEMS.put(PLATFORM_ITEM,BLOCKS.get(PLATFORM));
 	}
 }

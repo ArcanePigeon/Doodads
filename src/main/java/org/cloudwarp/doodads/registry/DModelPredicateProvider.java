@@ -1,8 +1,14 @@
 package org.cloudwarp.doodads.registry;
 
 import net.fabricmc.fabric.api.object.builder.v1.client.model.FabricModelPredicateProviderRegistry;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.item.ModelPredicateProviderRegistry;
+import net.minecraft.data.client.BlockStateModelGenerator;
+import net.minecraft.data.client.ModelIds;
+import net.minecraft.data.client.VariantsBlockStateSupplier;
 import net.minecraft.item.Item;
+import net.minecraft.state.property.Properties;
+import net.minecraft.util.Identifier;
 import org.cloudwarp.doodads.Doodads;
 
 public class DModelPredicateProvider {

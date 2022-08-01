@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "bottom=false": {
+      "model": "doodads:block/platform"
+    },
+    "bottom=true": {
+      "model": "doodads:block/platform"
+    }
+  }
+}
