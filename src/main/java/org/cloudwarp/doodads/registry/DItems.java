@@ -30,6 +30,7 @@ public class DItems {
 			return;
 		}
 		registerItem(SLINGSHOT.name, new SlingShotItem(new Item.Settings().group(DOODADS_GROUP).maxDamage(640), SLINGSHOT));
+		registerItem(SPORE_SWORD.name, new SporeSwordItem(new Item.Settings().group(DOODADS_GROUP), SPORE_SWORD, DToolMaterials.SPORE,3,-2.4f));
 		registerItem(PEBBLE.name, new PebbleItem(new Item.Settings().group(DOODADS_GROUP).maxCount(PEBBLE.maxCount), PEBBLE));
 		registerItem(PAINTBRUSH.name, new PaintbrushItem(new Item.Settings().group(DOODADS_GROUP).maxDamage(640), PAINTBRUSH));
 		registerItem(BEAVER_TEETH.name, new BeaverTeeth(new Item.Settings().group(DOODADS_GROUP).maxCount(1)));

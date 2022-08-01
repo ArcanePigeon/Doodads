@@ -29,6 +29,7 @@ public enum DoodadsItemTypes {
 	SHULKER_AGLET(1,"shulker_aglet"),
 	BLOSSOM_BELT(1,"blossom_belt"),
 	RUBBER_BAND(16,"rubber_band"),
+	SPORE_SWORD(1,"spore_sword"),
 	ENDER_GOGGLES(1,"ender_goggles");
 
 	public final int maxCount;
