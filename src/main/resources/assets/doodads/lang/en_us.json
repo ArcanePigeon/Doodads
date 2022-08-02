@@ -53,6 +53,8 @@
   "block.doodads.platform": "Wooden Platform",
   "block.doodads.asphalt": "Asphalt",
   "block.doodads.stone_brick_road": "Stone Brick Road",
+  "block.doodads.brick_road": "Brick Road",
+  "block.doodads.yellow_brick_road": "Yellow Brick Road",
   "entity.doodads.rubber_band": "Rubber Band",
   "entity.doodads.pebble": "Pebble",
   "death.attack.pebble": "%1$s was hit with a pebble by %2$s",

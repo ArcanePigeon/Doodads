@@ -39,6 +39,14 @@ public class DBlocks {
 			.hardness(3f)
 			.resistance(6f)
 			.sounds(BlockSoundGroup.STONE).requiresTool()),true);
+	public static final Block BRICK_ROAD          = create("brick_road", new RoadBlock(FabricBlockSettings.of(Material.STONE)
+			.hardness(3f)
+			.resistance(6f)
+			.sounds(BlockSoundGroup.STONE).requiresTool()),true);
+	public static final Block YELLOW_BRICK_ROAD          = create("yellow_brick_road", new RoadBlock(FabricBlockSettings.of(Material.STONE)
+			.hardness(3f)
+			.resistance(6f)
+			.sounds(BlockSoundGroup.STONE).requiresTool()),true);
 
 
 	public static BlockItem PLATFORM_ITEM;

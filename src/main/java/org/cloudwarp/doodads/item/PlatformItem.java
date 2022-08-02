@@ -54,7 +54,7 @@ public class PlatformItem extends BlockItem {
 			return null;
 		}
 		if (PlatformBlock.calculateDistance(world, blockPos) == 7) {
-			return null;
+			//return null;
 		}
 		return context;
 	}
