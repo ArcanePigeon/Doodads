@@ -9,6 +9,7 @@ import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import org.cloudwarp.doodads.Doodads;
+import org.cloudwarp.doodads.block.PortableNetherBlock;
 import org.cloudwarp.doodads.block.RoadBlock;
 import org.cloudwarp.doodads.block.GlareLight;
 import org.cloudwarp.doodads.block.PlatformBlock;
@@ -47,6 +48,10 @@ public class DBlocks {
 			.hardness(3f)
 			.resistance(6f)
 			.sounds(BlockSoundGroup.STONE).requiresTool()),true);
+	public static final Block PORTALBE_NETHER          = create("portable_nether", new PortableNetherBlock(FabricBlockSettings.of(Material.STONE)
+			.hardness(3f)
+			.resistance(6f)
+			.sounds(BlockSoundGroup.BASALT).requiresTool()),true);
 
 
 	public static BlockItem PLATFORM_ITEM;
