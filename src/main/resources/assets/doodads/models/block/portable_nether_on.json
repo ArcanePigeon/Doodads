@@ -1,0 +1,7 @@
+{
+	"parent": "doodads:block/portable_nether",
+	"textures": {
+		"0": "doodads:block/portable_nether_on",
+		"particle": "minecraft:block/basalt_side"
+	}
+}

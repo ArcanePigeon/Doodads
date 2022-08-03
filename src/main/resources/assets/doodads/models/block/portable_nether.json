@@ -3,7 +3,7 @@
 	"texture_size": [64, 64],
 	"textures": {
 		"0": "doodads:block/portable_nether",
-		"particle": "doodads:block/portable_nether"
+		"particle": "minecraft:block/basalt_side"
 	},
 	"elements": [
 		{

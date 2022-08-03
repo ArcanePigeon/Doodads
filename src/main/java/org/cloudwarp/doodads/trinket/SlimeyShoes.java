@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.UUID;
 
 import static org.cloudwarp.doodads.utils.DoodadsItemTypes.MIDNIGHTS_EYE;
+import static org.cloudwarp.doodads.utils.DoodadsItemTypes.SLIMEY_SHOES;
 
 public class SlimeyShoes extends TrinketItem {
 	public SlimeyShoes (Settings settings) {
@@ -28,6 +29,6 @@ public class SlimeyShoes extends TrinketItem {
 
 	@Override
 	public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-		tooltip.add(Text.translatable("item.doodads."+ MIDNIGHTS_EYE.name +".tooltip"));
+		tooltip.add(Text.translatable("item.doodads."+ SLIMEY_SHOES.name +".tooltip"));
 	}
 }

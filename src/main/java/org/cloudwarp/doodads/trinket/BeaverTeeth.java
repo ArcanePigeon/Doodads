@@ -30,6 +30,7 @@ public class BeaverTeeth extends TrinketItem {
 	public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
 		if(Screen.hasShiftDown()){
 			tooltip.add(Text.translatable("item.doodads."+ BEAVER_TEETH.name +".tooltip.shift"));
+			tooltip.add(Text.translatable("item.doodads."+ BEAVER_TEETH.name +".tooltip2.shift"));
 		}else{
 			tooltip.add(Text.translatable("item.doodads.generic_tooltip"));
 		}

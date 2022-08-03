@@ -1,5 +1,10 @@
 {
   "variants": {
-   "": { "model": "doodads:block/portable_nether"}
+    "lit=false": {
+      "model": "doodads:block/portable_nether"
+    },
+    "lit=true": {
+      "model": "doodads:block/portable_nether_on"
+    }
   }
 }

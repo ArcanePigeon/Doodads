@@ -42,6 +42,7 @@ public class PaintbrushItem extends Item {
 		if (Screen.hasShiftDown()) {
 			tooltip.add(Text.translatable("item.doodads." + doodadsItemType.name + ".tooltip.shift"));
 			tooltip.add(Text.translatable("item.doodads." + doodadsItemType.name + ".tooltip2.shift"));
+			tooltip.add(Text.translatable("item.doodads." + doodadsItemType.name + ".tooltip3.shift"));
 		} else {
 			tooltip.add(Text.translatable("item.doodads.generic_tooltip"));
 		}
