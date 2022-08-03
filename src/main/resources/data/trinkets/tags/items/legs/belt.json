@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "doodads:blossom_belt"
+    {
+      "id": "doodads:blossom_belt",
+      "required": false
+    }
   ]
 }

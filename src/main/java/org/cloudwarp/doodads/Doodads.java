@@ -6,6 +6,7 @@ import me.shedaniel.autoconfig.ConfigHolder;
 import me.shedaniel.autoconfig.serializer.Toml4jConfigSerializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.UseBlockCallback;
+import net.fabricmc.fabric.api.gametest.v1.FabricGameTest;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -13,10 +14,13 @@ import net.minecraft.block.PillarBlock;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.recipe.RecipeManager;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.tag.BlockTags;
+import net.minecraft.test.GameTest;
+import net.minecraft.test.TestContext;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
@@ -24,6 +28,7 @@ import net.minecraft.world.event.GameEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.cloudwarp.doodads.registry.*;
+import org.cloudwarp.doodads.test.ItemLoadedTest;
 import org.cloudwarp.doodads.utils.DConfig;
 
 import java.util.Optional;
@@ -42,6 +47,7 @@ public class Doodads implements ModInitializer {
 	public void onInitialize () {
 		AutoConfig.register(DConfig.class, Toml4jConfigSerializer::new);
 		configHolder = AutoConfig.getConfigHolder(DConfig.class);
+		ItemLoadedTest.init();
 		DEntities.init();
 		DParticles.init();
 		DItems.registerItems();
@@ -67,4 +73,6 @@ public class Doodads implements ModInitializer {
 	private Optional<BlockState> getStrippedState(BlockState state) {
 		return Optional.ofNullable(AxeItem.STRIPPED_BLOCKS.get(state.getBlock())).map(block -> (BlockState)block.getDefaultState().with(PillarBlock.AXIS, state.get(PillarBlock.AXIS)));
 	}
+
+
 }

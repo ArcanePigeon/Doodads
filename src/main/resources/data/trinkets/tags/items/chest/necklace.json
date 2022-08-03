@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "doodads:midnights_eye"
+    {
+      "id": "doodads:midnights_eye",
+      "required": false
+    }
   ]
 }

@@ -1,9 +1,21 @@
 {
   "replace": false,
   "values": [
-    "doodads:sun_ring",
-    "doodads:moon_ring",
-    "doodads:celestial_ring",
-    "doodads:cactus_ring"
+    {
+      "id": "doodads:sun_ring",
+      "required": false
+    },
+    {
+      "id": "doodads:moon_ring",
+      "required": false
+    },
+    {
+      "id": "doodads:celestial_ring",
+      "required": false
+    },
+    {
+      "id": "doodads:cactus_ring",
+      "required": false
+    }
   ]
 }

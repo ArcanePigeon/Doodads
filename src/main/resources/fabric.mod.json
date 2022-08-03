@@ -28,7 +28,10 @@
       "org.cloudwarp.doodads.utils.DModMenu"
     ],
     "fabric-datagen": [
-      "org.cloudwarp.doodads.registry.DDataGeneratorEntrypoint"
+      "org.cloudwarp.doodads.data.DDataGeneratorEntrypoint"
+    ],
+    "fabric-gametest": [
+      "org.cloudwarp.doodads.test.resource.conditions.DConditionalResources"
     ]
   },
   "mixins": [
@@ -38,10 +41,7 @@
   "depends": {
     "fabricloader": ">=0.14.8",
     "fabric": "*",
-    "minecraft": "~1.19",
+    "minecraft": ">=1.19",
     "java": ">=17"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }

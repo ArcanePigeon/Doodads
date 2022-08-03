@@ -39,7 +39,7 @@ public class PlatformItem extends BlockItem {
 					PlayerEntity playerEntity = context.getPlayer();
 					int j = world.getTopY();
 					if (!(playerEntity instanceof ServerPlayerEntity) || mutable.getY() < j) break;
-					((ServerPlayerEntity)playerEntity).sendMessage((Text)Text.translatable("build.tooHigh", j - 1).formatted(Formatting.RED), MessageType.GAME_INFO);
+					((ServerPlayerEntity)playerEntity).sendMessageToClient(Text.translatable("build.tooHigh", new Object[]{j - 1}).formatted(Formatting.RED), true);
 					break;
 				}
 				blockState = world.getBlockState(mutable);

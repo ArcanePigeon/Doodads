@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "srs",
+    " s ",
+    " s "
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "r": {
+      "item": "doodads:rubber_band"
+    }
+  },
+  "result": {
+    "item": "doodads:slingshot",
+    "count": 1
+  },
+  "fabric:load_conditions": [
+    {
+      "condition": "doodads:all_items_present",
+      "values": [
+        "doodads:rubber_band"
+      ]
+    }
+  ]
+}

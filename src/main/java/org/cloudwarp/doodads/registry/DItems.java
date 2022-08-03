@@ -7,8 +7,7 @@ import net.minecraft.util.registry.Registry;
 import org.cloudwarp.doodads.Doodads;
 import org.cloudwarp.doodads.item.*;
 import org.cloudwarp.doodads.trinket.*;
-
-import static org.cloudwarp.doodads.utils.DoodadsItemTypes.*;
+import org.cloudwarp.doodads.utils.DoodadsItemTypes;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,10 +16,10 @@ import java.util.Random;
 public class DItems {
 	public static final ItemGroup DOODADS_GROUP = FabricItemGroupBuilder.create(
 					new Identifier("doodads", "general"))
-			.icon(() -> SLINGSHOT.itemStack())
+			.icon(() -> DoodadsItemTypes.SLINGSHOT.itemStack())
 			.build();
-	private static final HashMap<String, Item> ITEMS = new HashMap<>();
-	private static final ArrayList<Item> BUNDLE_ITEMS = new ArrayList<>();
+	public static final HashMap<String, Item> ITEMS = new HashMap<>();
+	public static final HashMap<Item, Identifier> BUNDLE_ITEMS = new HashMap<>();
 	//private static final ArrayList<Item> COMMON_TRINKETS = new ArrayList<>();
 	//private static final ArrayList<Item> UNCOMMON_TRINKETS = new ArrayList<>();
 	//private static final ArrayList<Item> RARE_TRINKETS = new ArrayList<>();
@@ -28,14 +27,14 @@ public class DItems {
 	static Random rand = new Random();
 
 
-	private static void registerItem (String id, Item item, boolean isBundleItem) {
-		ITEMS.put(id, Registry.register(Registry.ITEM, Doodads.id(id), item));
+	private static Item registerItem (String id, Item item, boolean isBundleItem) {
 		if(isBundleItem){
-			addBundleItem(item);
+			addBundleItem(item,Doodads.id(id));
 		}
+		return ITEMS.put(id, Registry.register(Registry.ITEM, Doodads.id(id), item));
 	}
-	private static void addBundleItem (Item item) {
-		BUNDLE_ITEMS.add(item);
+	private static void addBundleItem (Item item, Identifier id) {
+		BUNDLE_ITEMS.put(item,id);
 	}
 	/*private static void addCommonTrinket (Item item) {
 		COMMON_TRINKETS.add(item);
@@ -49,35 +48,61 @@ public class DItems {
 	private static void addUltraRareTrinket (Item item) {
 		ULTRA_RARE_TRINKETS.add(item);
 	}*/
+	//public static final Item SLINGSHOT;
+	//public static final Item SPORE_SWORD;
+	//public static Item PEBBLE;
+	//public static final Item PAINTBRUSH;
+	//public static final Item BEAVER_TEETH;
+	//public static final Item ENDER_GOGGLES;
+	//public static final Item SPEED_BOOTS;
+	//public static final Item BENDY_STRAW;
+	//public static final Item SOGGY_GLOVE;
+	//public static final Item LOGGERS_GLOVE;
+	//public static final Item SUN_RING;
+	//public static final Item MOON_RING;
+	//public static final Item CELESTIAL_RING;
+	//public static final Item CACTUS_RING;
+	//public static final Item MIDNIGHTS_EYE;
+	//public static final Item GLARE_PLUSHIE;
+	//public static final Item SLIMEY_SHOES;
+	//public static final Item SHULKER_AGLET;
+	//public static final Item BLOSSOM_BELT;
+	//public static final Item SCISSORS;
+	//public static final Item DOODAD_BUNDLE;
+	//public static final Item RUBBER_BAND;
+	//public static final Item GLARE_STAFF;
+	//public static final Item DUCT_TAPE;
+	//public static final Item MAGIC_PLUM;
 
 	public static void registerItems () {
 		if (! ITEMS.isEmpty()) {
 			return;}
-		registerItem(SLINGSHOT.name, new SlingShotItem(new Item.Settings().group(DOODADS_GROUP).maxDamage(640), SLINGSHOT), false);
-		registerItem(SPORE_SWORD.name, new SporeSwordItem(new Item.Settings().group(DOODADS_GROUP), SPORE_SWORD, DToolMaterials.SPORE,3,-2.4f), true);
-		registerItem(PEBBLE.name, new PebbleItem(new Item.Settings().group(DOODADS_GROUP).maxCount(PEBBLE.maxCount), PEBBLE), false);
-		registerItem(PAINTBRUSH.name, new PaintbrushItem(new Item.Settings().group(DOODADS_GROUP).maxDamage(640), PAINTBRUSH), true);
-		registerItem(BEAVER_TEETH.name, new BeaverTeeth(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
-		registerItem(ENDER_GOGGLES.name, new EnderGoggles(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
-		registerItem(SPEED_BOOTS.name, new SpeedBoots(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
-		registerItem(BENDY_STRAW.name, new BendyStraw(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
-		registerItem(SOGGY_GLOVE.name, new SoggyGlove(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
-		registerItem(LOGGERS_GLOVE.name, new LoggersGlove(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
-		registerItem(SUN_RING.name, new SunRing(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
-		registerItem(MOON_RING.name, new MoonRing(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
-		registerItem(CELESTIAL_RING.name, new CelestialRing(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
-		registerItem(CACTUS_RING.name, new CactusRing(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
-		registerItem(MIDNIGHTS_EYE.name, new MidnightsEye(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
-		registerItem(GLARE_PLUSHIE.name, new GlarePlushie(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
-		registerItem(SLIMEY_SHOES.name, new SlimeyShoes(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
-		registerItem(SHULKER_AGLET.name, new ShulkerAglet(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
-		registerItem(BLOSSOM_BELT.name, new BlossomBelt(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
-		registerItem(SCISSORS.name, new DoodadsItem(new Item.Settings().group(DOODADS_GROUP).maxCount(SCISSORS.maxCount), SCISSORS), true);
-		registerItem(DOODAD_BUNDLE.name, new DoodadBundleItem(new Item.Settings().group(DOODADS_GROUP).maxCount(DOODAD_BUNDLE.maxCount), DOODAD_BUNDLE), false);
-		registerItem(RUBBER_BAND.name, new RubberBandItem(new Item.Settings().group(DOODADS_GROUP).maxCount(RUBBER_BAND.maxCount), RUBBER_BAND), false);
-		registerItem(GLARE_STAFF.name, new GlareStaffItem(new Item.Settings().group(DOODADS_GROUP).maxCount(GLARE_STAFF.maxCount), GLARE_STAFF), true);
-		registerItem(DUCT_TAPE.name, new DuctTapeItem(new Item.Settings().group(DOODADS_GROUP).maxCount(DUCT_TAPE.maxCount), DUCT_TAPE), true);
-		registerItem(MAGIC_PLUM.name, new MagicPlum(new Item.Settings().group(DOODADS_GROUP).maxCount(1).food(DFoodComponents.MAGIC_PLUM_FOOD), MAGIC_PLUM), false);
+
+		registerItem(DoodadsItemTypes.SLINGSHOT.name, new SlingShotItem(new Item.Settings().group(DOODADS_GROUP), DoodadsItemTypes.SLINGSHOT), false);
+		registerItem(DoodadsItemTypes.SPORE_SWORD.name, new SporeSwordItem(new Item.Settings().group(DOODADS_GROUP), DoodadsItemTypes.SPORE_SWORD, DToolMaterials.SPORE,3,-2.4f), true);
+		registerItem(DoodadsItemTypes.PEBBLE.name, new PebbleItem(new Item.Settings().group(DOODADS_GROUP).maxCount(DoodadsItemTypes.PEBBLE.maxCount), DoodadsItemTypes.PEBBLE), false);
+		registerItem(DoodadsItemTypes.PAINTBRUSH.name, new PaintbrushItem(new Item.Settings().group(DOODADS_GROUP).maxDamage(640), DoodadsItemTypes.PAINTBRUSH), true);
+		registerItem(DoodadsItemTypes.BEAVER_TEETH.name, new BeaverTeeth(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
+		registerItem(DoodadsItemTypes.ENDER_GOGGLES.name, new EnderGoggles(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
+		registerItem(DoodadsItemTypes.SPEED_BOOTS.name, new SpeedBoots(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
+		registerItem(DoodadsItemTypes.BENDY_STRAW.name, new BendyStraw(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
+		registerItem(DoodadsItemTypes.SOGGY_GLOVE.name, new SoggyGlove(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
+		registerItem(DoodadsItemTypes.LOGGERS_GLOVE.name, new LoggersGlove(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
+		registerItem(DoodadsItemTypes.SUN_RING.name, new SunRing(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
+		registerItem(DoodadsItemTypes.MOON_RING.name, new MoonRing(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
+		registerItem(DoodadsItemTypes.CELESTIAL_RING.name, new CelestialRing(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
+		registerItem(DoodadsItemTypes.CACTUS_RING.name, new CactusRing(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
+		registerItem(DoodadsItemTypes.MIDNIGHTS_EYE.name, new MidnightsEye(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
+		registerItem(DoodadsItemTypes.GLARE_PLUSHIE.name, new GlarePlushie(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
+		registerItem(DoodadsItemTypes.SLIMEY_SHOES.name, new SlimeyShoes(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
+		registerItem(DoodadsItemTypes.SHULKER_AGLET.name, new ShulkerAglet(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
+		registerItem(DoodadsItemTypes.BLOSSOM_BELT.name, new BlossomBelt(new Item.Settings().group(DOODADS_GROUP).maxCount(1)), true);
+		registerItem(DoodadsItemTypes.SCISSORS.name, new DoodadsItem(new Item.Settings().group(DOODADS_GROUP).maxCount(DoodadsItemTypes.SCISSORS.maxCount), DoodadsItemTypes.SCISSORS), true);
+		registerItem(DoodadsItemTypes.DOODAD_BUNDLE.name, new DoodadBundleItem(new Item.Settings().group(DOODADS_GROUP).maxCount(DoodadsItemTypes.DOODAD_BUNDLE.maxCount), DoodadsItemTypes.DOODAD_BUNDLE), false);
+		registerItem(DoodadsItemTypes.RUBBER_BAND.name, new RubberBandItem(new Item.Settings().group(DOODADS_GROUP).maxCount(DoodadsItemTypes.RUBBER_BAND.maxCount), DoodadsItemTypes.RUBBER_BAND), false);
+		registerItem(DoodadsItemTypes.GLARE_STAFF.name, new GlareStaffItem(new Item.Settings().group(DOODADS_GROUP).maxCount(DoodadsItemTypes.GLARE_STAFF.maxCount), DoodadsItemTypes.GLARE_STAFF), true);
+		registerItem(DoodadsItemTypes.DUCT_TAPE.name, new DuctTapeItem(new Item.Settings().group(DOODADS_GROUP).maxCount(DoodadsItemTypes.DUCT_TAPE.maxCount), DoodadsItemTypes.DUCT_TAPE), true);
+		registerItem(DoodadsItemTypes.MAGIC_PLUM.name, new MagicPlum(new Item.Settings().group(DOODADS_GROUP).maxCount(1).food(DFoodComponents.MAGIC_PLUM_FOOD), DoodadsItemTypes.MAGIC_PLUM), false);
 	}
 
 	public static Item get (String id) {
@@ -96,7 +121,7 @@ public class DItems {
 		//}else if( chance > 0.90f && !ULTRA_RARE_TRINKETS.isEmpty()){
 		//	trinket = ULTRA_RARE_TRINKETS.get((int)(rand.nextFloat() * ULTRA_RARE_TRINKETS.size()));
 		//}
-		trinket = BUNDLE_ITEMS.get((int)(rand.nextFloat() * BUNDLE_ITEMS.size()));
+		trinket = ((Item[])BUNDLE_ITEMS.keySet().toArray())[(int)(rand.nextFloat() * BUNDLE_ITEMS.size())];
 		return trinket;
 	}
 }

@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "doodads:all_items_present",
+      "values": [
+        "doodads:doodad_bundle"
+      ]
+    }
+  ],
+  "pattern": [
+    "dbd",
+    "hth",
+    "rhr"
+  ],
+  "key": {
+    "t": {
+      "tag": "doodads:doodad_bundle_craftable"
+    },
+    "h": {
+      "item": "minecraft:rabbit_hide"
+    },
+    "d": {
+      "item": "minecraft:diamond"
+    },
+    "r": {
+      "item": "minecraft:rabbit_foot"
+    },
+    "b": {
+      "item": "doodads:rubber_band"
+    }
+  },
+  "result": {
+    "item": "doodads:doodad_bundle",
+    "count": 1
+  }
+}
