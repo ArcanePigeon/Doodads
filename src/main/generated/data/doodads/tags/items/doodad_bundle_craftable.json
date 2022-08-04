@@ -2,15 +2,11 @@
   "replace": false,
   "values": [
     {
+      "id": "doodads:celestial_ring",
+      "required": false
+    },
+    {
       "id": "doodads:spore_sword",
-      "required": false
-    },
-    {
-      "id": "doodads:sun_ring",
-      "required": false
-    },
-    {
-      "id": "doodads:duct_tape",
       "required": false
     },
     {
@@ -18,43 +14,7 @@
       "required": false
     },
     {
-      "id": "doodads:glare_plushie",
-      "required": false
-    },
-    {
-      "id": "doodads:blossom_belt",
-      "required": false
-    },
-    {
-      "id": "doodads:glare_staff",
-      "required": false
-    },
-    {
       "id": "doodads:shulker_aglet",
-      "required": false
-    },
-    {
-      "id": "doodads:scissors",
-      "required": false
-    },
-    {
-      "id": "doodads:loggers_glove",
-      "required": false
-    },
-    {
-      "id": "doodads:midnights_eye",
-      "required": false
-    },
-    {
-      "id": "doodads:beaver_teeth",
-      "required": false
-    },
-    {
-      "id": "doodads:ender_goggles",
-      "required": false
-    },
-    {
-      "id": "doodads:slimey_shoes",
       "required": false
     },
     {
@@ -62,11 +22,15 @@
       "required": false
     },
     {
-      "id": "doodads:celestial_ring",
+      "id": "doodads:speed_boots",
       "required": false
     },
     {
-      "id": "doodads:soggy_glove",
+      "id": "doodads:glare_plushie",
+      "required": false
+    },
+    {
+      "id": "doodads:duct_tape",
       "required": false
     },
     {
@@ -74,11 +38,47 @@
       "required": false
     },
     {
-      "id": "doodads:speed_boots",
+      "id": "doodads:blossom_belt",
+      "required": false
+    },
+    {
+      "id": "doodads:slimey_shoes",
+      "required": false
+    },
+    {
+      "id": "doodads:ender_goggles",
       "required": false
     },
     {
       "id": "doodads:moon_ring",
+      "required": false
+    },
+    {
+      "id": "doodads:beaver_teeth",
+      "required": false
+    },
+    {
+      "id": "doodads:loggers_glove",
+      "required": false
+    },
+    {
+      "id": "doodads:scissors",
+      "required": false
+    },
+    {
+      "id": "doodads:glare_staff",
+      "required": false
+    },
+    {
+      "id": "doodads:sun_ring",
+      "required": false
+    },
+    {
+      "id": "doodads:midnights_eye",
+      "required": false
+    },
+    {
+      "id": "doodads:soggy_glove",
       "required": false
     }
   ]

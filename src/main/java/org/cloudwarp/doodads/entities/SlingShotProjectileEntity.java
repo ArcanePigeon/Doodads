@@ -214,7 +214,7 @@ public abstract class SlingShotProjectileEntity extends ProjectileEntity {
 					((ServerPlayerEntity)entity2).networkHandler.sendPacket(new GameStateChangeS2CPacket(GameStateChangeS2CPacket.PROJECTILE_HIT_PLAYER, 0.0F));
 				}
 
-
+				this.playSound(this.sound, 0.7F, 1.4F / (this.random.nextFloat() * 0.2F + 0.9F));
 			}
 			this.discard();
 		} else {
@@ -398,9 +398,13 @@ public abstract class SlingShotProjectileEntity extends ProjectileEntity {
 		super.onCollision(hitResult);
 		if(!this.world.isClient){
 			this.world.sendEntityStatus(this, EntityStatuses.PLAY_DEATH_SOUND_OR_ADD_PROJECTILE_HIT_PARTICLES);
-			this.playSound(this.sound, 0.7F, 1.4F / (this.random.nextFloat() * 0.2F + 0.9F));
 			this.discard();
 		}
+	}
+	@Override
+	protected void onBlockHit(BlockHitResult blockHitResult) {
+		super.onBlockHit(blockHitResult);
+		this.playSound(this.getSound(), 1.0F, 1.2F / (this.random.nextFloat() * 0.2F + 0.9F));
 	}
 
 	static {

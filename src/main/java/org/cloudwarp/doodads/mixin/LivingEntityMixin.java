@@ -18,6 +18,7 @@ import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.stat.Stats;
@@ -180,5 +181,13 @@ public abstract class LivingEntityMixin extends Entity {
 		}
 	}
 
+	@Inject(method = "readCustomDataFromNbt", at = @At("HEAD"))
+	public void readDoodadNBT(NbtCompound nbt, CallbackInfo ci){
+		this.dataTracker.set(HAS_MAGIC_PLUM, nbt.getBoolean("doodads_has_magic_plum"));
+	}
+	@Inject(method="writeCustomDataToNbt", at = @At("HEAD"))
+	public void writeDoodadNBT(NbtCompound nbt, CallbackInfo ci){
+		nbt.putBoolean("doodads_has_magic_plum",this.dataTracker.get(HAS_MAGIC_PLUM));
+	}
 
 }
