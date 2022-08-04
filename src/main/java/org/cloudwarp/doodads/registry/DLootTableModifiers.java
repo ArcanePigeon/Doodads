@@ -1,6 +1,7 @@
 package org.cloudwarp.doodads.registry;
 
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
@@ -17,6 +18,9 @@ public class DLootTableModifiers {
 
 	private static Identifier mcId (String path) {
 		return new Identifier("minecraft", path);
+	}
+	private static Identifier pcId (String path) {
+		return new Identifier("probablychests", path);
 	}
 
 	private static final Random random = new Random();
@@ -48,6 +52,9 @@ public class DLootTableModifiers {
 			CHESTS.add(mcId("chests/village/villager_temple"));
 			CHESTS.add(mcId("chests/village/villager_toolsmith"));
 			CHESTS.add(mcId("chests/village/villager_weaponsmith"));
+		}
+		if(FabricLoader.getInstance().isModLoaded("probablychests")){
+			CHESTS.add(pcId("chests/normal_items"));
 		}
 
 		CHESTS.add(mcId("chests/abandoned_mineshaft"));
