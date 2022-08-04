@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "doodads:all_items_present",
+      "values": [
+        "doodads:glare_plushie",
+        "doodads:glare_staff"
+      ]
+    }
+  ],
+  "pattern": [
+    "  g",
+    " s ",
+    "s  "
+  ],
+  "key": {
+    "g": {
+      "item": "doodads:glare_plushie"
+    },
+    "s": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "doodads:glare_staff",
+    "count": 1
+  }
+}

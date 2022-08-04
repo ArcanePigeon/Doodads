@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "doodads:all_blocks_present",
+      "values": [
+        "doodads:portable_nether"
+      ]
+    }
+  ],
+  "pattern": [
+    "nnn",
+    "blb",
+    "brb"
+  ],
+  "key": {
+    "b": {
+      "item": "minecraft:basalt"
+    },
+    "l": {
+      "item": "minecraft:lava_bucket"
+    },
+    "r": {
+      "item": "minecraft:blaze_rod"
+    },
+    "n": {
+      "item": "minecraft:netherrack"
+    }
+  },
+  "result": {
+    "item": "doodads:portable_nether",
+    "count": 1
+  }
+}

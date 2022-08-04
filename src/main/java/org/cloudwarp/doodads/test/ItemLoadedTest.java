@@ -5,6 +5,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.registry.Registry;
 import org.cloudwarp.doodads.Doodads;
+import org.cloudwarp.doodads.registry.DBlocks;
+import org.cloudwarp.doodads.registry.DItems;
 
 public class ItemLoadedTest {
 	public static void init(){
@@ -12,7 +14,7 @@ public class ItemLoadedTest {
 			var values = JsonHelper.getArray(json, "values");
 
 			for (var value : values) {
-				if (! Registry.ITEM.containsId(new Identifier(value.getAsString()))) {
+				if (! DItems.ENABLED_ITEMS.contains(new Identifier(value.getAsString()))) {
 					return false;
 				}
 			}
@@ -22,7 +24,7 @@ public class ItemLoadedTest {
 			var values = JsonHelper.getArray(json, "values");
 
 			for (var value : values) {
-				if (!Registry.BLOCK.containsId(new Identifier(value.getAsString()))) {
+				if (! DBlocks.ENABLED_BLOCKS.contains(new Identifier(value.getAsString()))) {
 					return false;
 				}
 			}

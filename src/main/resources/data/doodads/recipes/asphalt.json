@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "doodads:all_blocks_present",
+      "values": [
+        "doodads:asphalt"
+      ]
+    }
+  ],
+  "pattern": [
+    "sss",
+    "ddd",
+    "ggg"
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:stone"
+    },
+    "d": {
+      "item": "minecraft:sand"
+    },
+    "g": {
+      "item": "minecraft:gravel"
+    }
+  },
+  "result": {
+    "item": "doodads:asphalt",
+    "count": 9
+  }
+}

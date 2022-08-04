@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "fabric:load_conditions": [
+    {
+      "condition": "doodads:all_items_present",
+      "values": [
+        "doodads:moon_ring",
+        "doodads:sun_ring",
+        "doodads:celestial_ring"
+      ]
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "doodads:sun_ring"
+    },
+    {
+      "item": "doodads:moon_ring"
+    }
+  ],
+  "result": {
+    "item": "doodads:celestial_ring",
+    "count": 1
+  }
+}

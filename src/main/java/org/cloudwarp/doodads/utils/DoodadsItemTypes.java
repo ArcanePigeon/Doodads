@@ -48,4 +48,5 @@ public enum DoodadsItemTypes {
 	public Item item (){
 		return (DItems.get(this.name));
 	}
+
 }

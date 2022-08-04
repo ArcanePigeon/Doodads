@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "doodads:all_blocks_present",
+      "values": [
+        "doodads:platform"
+      ]
+    }
+  ],
+  "pattern": [
+    "iii",
+    "www",
+    "iii"
+  ],
+  "key": {
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "w": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "result": {
+    "item": "doodads:platform",
+    "count": 16
+  }
+}

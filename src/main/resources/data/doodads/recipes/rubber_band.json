@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "doodads:all_items_present",
+      "values": [
+        "doodads:rubber_band"
+      ]
+    }
+  ],
+  "pattern": [
+    "sss",
+    "grg",
+    "sss"
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:string"
+    },
+    "r": {
+      "item": "minecraft:red_dye"
+    },
+    "g": {
+      "item": "minecraft:slime_ball"
+    }
+  },
+  "result": {
+    "item": "doodads:rubber_band",
+    "count": 1
+  }
+}

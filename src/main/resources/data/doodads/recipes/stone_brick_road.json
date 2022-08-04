@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "fabric:load_conditions": [
+    {
+      "condition": "doodads:all_blocks_present",
+      "values": [
+        "doodads:stone_brick_road"
+      ]
+    }
+  ],
+  "pattern": [
+    "bbb",
+    "mmm",
+    "bbb"
+  ],
+  "key": {
+    "b": {
+      "item": "minecraft:stone_bricks"
+    },
+    "m": {
+      "item": "minecraft:mud"
+    }
+  },
+  "result": {
+    "item": "doodads:stone_brick_road",
+    "count": 9
+  }
+}

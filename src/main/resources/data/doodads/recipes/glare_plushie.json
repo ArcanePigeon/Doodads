@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "fabric:load_conditions": [
+    {
+      "condition": "doodads:all_items_present",
+      "values": [
+        "doodads:glare_plushie",
+        "doodads:glare_staff"
+      ]
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "doodads:glare_staff"
+    }
+  ],
+  "result": {
+    "item": "doodads:glare_plushie",
+    "count": 1
+  }
+}
