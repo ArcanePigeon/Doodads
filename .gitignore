@@ -32,3 +32,4 @@ bin/
 
 /run/
 /local.properties
+/src/main/generated/.cache/

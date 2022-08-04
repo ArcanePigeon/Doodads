@@ -2,7 +2,35 @@
   "replace": false,
   "values": [
     {
+      "id": "doodads:spore_sword",
+      "required": false
+    },
+    {
+      "id": "doodads:sun_ring",
+      "required": false
+    },
+    {
       "id": "doodads:duct_tape",
+      "required": false
+    },
+    {
+      "id": "doodads:bendy_straw",
+      "required": false
+    },
+    {
+      "id": "doodads:glare_plushie",
+      "required": false
+    },
+    {
+      "id": "doodads:blossom_belt",
+      "required": false
+    },
+    {
+      "id": "doodads:glare_staff",
+      "required": false
+    },
+    {
+      "id": "doodads:shulker_aglet",
       "required": false
     },
     {
@@ -10,7 +38,7 @@
       "required": false
     },
     {
-      "id": "doodads:celestial_ring",
+      "id": "doodads:loggers_glove",
       "required": false
     },
     {
@@ -18,7 +46,11 @@
       "required": false
     },
     {
-      "id": "doodads:loggers_glove",
+      "id": "doodads:beaver_teeth",
+      "required": false
+    },
+    {
+      "id": "doodads:ender_goggles",
       "required": false
     },
     {
@@ -30,31 +62,7 @@
       "required": false
     },
     {
-      "id": "doodads:glare_staff",
-      "required": false
-    },
-    {
-      "id": "doodads:blossom_belt",
-      "required": false
-    },
-    {
-      "id": "doodads:glare_plushie",
-      "required": false
-    },
-    {
-      "id": "doodads:spore_sword",
-      "required": false
-    },
-    {
-      "id": "doodads:ender_goggles",
-      "required": false
-    },
-    {
-      "id": "doodads:beaver_teeth",
-      "required": false
-    },
-    {
-      "id": "doodads:bendy_straw",
+      "id": "doodads:celestial_ring",
       "required": false
     },
     {
@@ -71,14 +79,6 @@
     },
     {
       "id": "doodads:moon_ring",
-      "required": false
-    },
-    {
-      "id": "doodads:sun_ring",
-      "required": false
-    },
-    {
-      "id": "doodads:shulker_aglet",
       "required": false
     }
   ]
