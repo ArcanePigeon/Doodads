@@ -9,10 +9,7 @@ import org.cloudwarp.doodads.item.*;
 import org.cloudwarp.doodads.trinket.*;
 import org.cloudwarp.doodads.utils.DoodadsItemTypes;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Random;
+import java.util.*;
 
 public class DItems {
 	public static final ItemGroup DOODADS_GROUP = FabricItemGroupBuilder.create(
@@ -86,11 +83,12 @@ public class DItems {
 	}
 
 	public static Item getRandomBundleItem(){
-		if(BUNDLE_ITEMS.isEmpty()){
-			return Items.AIR;
+		Item trinket = Items.AIR;
+		int itemPos = (int)(rand.nextFloat() * BUNDLE_ITEMS.size());
+		Iterator<Item> iter = BUNDLE_ITEMS.keySet().iterator();
+		for(int i = 0; i < itemPos && iter.hasNext(); i++){
+			trinket = iter.next();
 		}
-		Item trinket;
-		trinket = ((Item[])BUNDLE_ITEMS.keySet().toArray())[(int)(rand.nextFloat() * BUNDLE_ITEMS.size())];
 		return trinket;
 	}
 }
