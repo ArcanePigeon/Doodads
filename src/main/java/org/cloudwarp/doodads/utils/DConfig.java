@@ -57,9 +57,9 @@ public class DConfig implements ConfigData {
 	}
 
 	public static class DoodadWorldGen {
-		public float chestDoodadSpawnRate = 19f;
+		public float   chestDoodadSpawnRate = 19f;
 		public boolean enableDoodadSpawnsInVillages = false;
-		public float entityDoodadDropRate = 16f;
+		public float   entityDoodadDropRate = 16f;
 
 	}
 

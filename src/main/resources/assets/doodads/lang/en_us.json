@@ -109,5 +109,10 @@
   "text.autoconfig.doodads.option.doodadBlocks.enableStoneBrickRoad": "Enable Stone Brick Road",
   "text.autoconfig.doodads.option.doodadBlocks.enableYellowBrickRoad": "Enable Yellow Brick Road",
   "text.autoconfig.doodads.option.doodadBlocks.enablePlatform": "Enable Platforms",
-  "text.autoconfig.doodads.option.doodadBlocks.enablePortableNether": "Enable Portable Nether"
+  "text.autoconfig.doodads.option.doodadBlocks.enablePortableNether": "Enable Portable Nether",
+
+  "text.autoconfig.doodads.option.doodadWorldGen": "World Gen",
+  "text.autoconfig.doodads.option.doodadWorldGen.chestDoodadSpawnRate": "Doodad Spawn Rate In Chests",
+  "text.autoconfig.doodads.option.doodadWorldGen.enableDoodadSpawnsInVillages": "Enable Doodads In Village Chests",
+  "text.autoconfig.doodads.option.doodadWorldGen.entityDoodadDropRate": "Doodad Drop Rate From Entities"
 }
