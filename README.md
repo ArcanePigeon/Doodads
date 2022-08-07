@@ -3,3 +3,7 @@ A Fabric mod for Minecraft that adds tons of interesting items, trinkets, and mo
 
 ## Releases
 [CurseForge](https://www.curseforge.com/minecraft/mc-mods/doodads-fabric)
+
+## Information
+[Wiki](https://cloudwarp.org/projects/doodads/})
+
