@@ -1,9 +1,6 @@
 {
   "replace": false,
   "values": [
-    {
-      "id": "doodads:shulker_aglet",
-      "required": false
-    }
+    "doodads:shulker_aglet"
   ]
 }

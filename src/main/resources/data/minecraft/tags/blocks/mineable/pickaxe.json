@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
-    "doodads:asphalt"
+    "doodads:asphalt",
+    "doodads:brick_road",
+    "doodads:stone_brick_road",
+    "doodads:yellow_brick_road",
+    "doodads:portable_nether"
   ]
 }

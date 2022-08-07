@@ -1,13 +1,7 @@
 {
   "replace": false,
   "values": [
-    {
-      "id": "doodads:speed_boots",
-      "required": false
-    },
-    {
-      "id": "doodads:slimey_shoes",
-      "required": false
-    }
+    "doodads:speed_boots",
+    "doodads:slimey_shoes"
   ]
 }

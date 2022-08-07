@@ -1,13 +1,7 @@
 {
   "replace": false,
   "values": [
-    {
-      "id": "doodads:soggy_glove",
-      "required": false
-    },
-    {
-      "id": "doodads:loggers_glove",
-      "required": false
-    }
+    "doodads:soggy_glove",
+    "doodads:loggers_glove"
   ]
 }

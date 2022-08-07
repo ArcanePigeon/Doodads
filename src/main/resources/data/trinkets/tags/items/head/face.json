@@ -1,17 +1,8 @@
 {
   "replace": false,
   "values": [
-    {
-      "id": "doodads:ender_goggles",
-      "required": false
-    },
-    {
-      "id": "doodads:beaver_teeth",
-      "required": false
-    },
-    {
-      "id": "doodads:bendy_straw",
-      "required": false
-    }
+      "doodads:ender_goggles",
+      "doodads:beaver_teeth",
+      "doodads:bendy_straw"
   ]
 }

@@ -1,85 +1,25 @@
 {
   "replace": false,
   "values": [
-    {
-      "id": "doodads:celestial_ring",
-      "required": false
-    },
-    {
-      "id": "doodads:spore_sword",
-      "required": false
-    },
-    {
-      "id": "doodads:bendy_straw",
-      "required": false
-    },
-    {
-      "id": "doodads:shulker_aglet",
-      "required": false
-    },
-    {
-      "id": "doodads:paintbrush",
-      "required": false
-    },
-    {
-      "id": "doodads:speed_boots",
-      "required": false
-    },
-    {
-      "id": "doodads:glare_plushie",
-      "required": false
-    },
-    {
-      "id": "doodads:duct_tape",
-      "required": false
-    },
-    {
-      "id": "doodads:cactus_ring",
-      "required": false
-    },
-    {
-      "id": "doodads:blossom_belt",
-      "required": false
-    },
-    {
-      "id": "doodads:slimey_shoes",
-      "required": false
-    },
-    {
-      "id": "doodads:ender_goggles",
-      "required": false
-    },
-    {
-      "id": "doodads:moon_ring",
-      "required": false
-    },
-    {
-      "id": "doodads:beaver_teeth",
-      "required": false
-    },
-    {
-      "id": "doodads:loggers_glove",
-      "required": false
-    },
-    {
-      "id": "doodads:scissors",
-      "required": false
-    },
-    {
-      "id": "doodads:glare_staff",
-      "required": false
-    },
-    {
-      "id": "doodads:sun_ring",
-      "required": false
-    },
-    {
-      "id": "doodads:midnights_eye",
-      "required": false
-    },
-    {
-      "id": "doodads:soggy_glove",
-      "required": false
-    }
+    "doodads:speed_boots",
+    "doodads:bendy_straw",
+    "doodads:glare_plushie",
+    "doodads:slimey_shoes",
+    "doodads:duct_tape",
+    "doodads:midnights_eye",
+    "doodads:blossom_belt",
+    "doodads:spore_sword",
+    "doodads:moon_ring",
+    "doodads:celestial_ring",
+    "doodads:shulker_aglet",
+    "doodads:sun_ring",
+    "doodads:scissors",
+    "doodads:loggers_glove",
+    "doodads:ender_goggles",
+    "doodads:paintbrush",
+    "doodads:cactus_ring",
+    "doodads:glare_staff",
+    "doodads:soggy_glove",
+    "doodads:beaver_teeth"
   ]
 }

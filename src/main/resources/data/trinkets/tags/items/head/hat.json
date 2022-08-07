@@ -1,9 +1,6 @@
 {
   "replace": false,
   "values": [
-    {
-      "id": "doodads:glare_plushie",
-      "required": false
-    }
+    "doodads:glare_plushie"
   ]
 }

@@ -15,6 +15,6 @@ public class DItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
 	@Override
 	public void generateTags () {
-		DItems.BUNDLE_ITEMS.forEach((item, identifier) -> getOrCreateTagBuilder(DTagKeys.DOODAD_BUNDLE_CRAFTABLE).addOptional(identifier));
+		DItems.BUNDLE_ITEMS.forEach((item, identifier) -> getOrCreateTagBuilder(DTagKeys.DOODAD_BUNDLE_CRAFTABLE).add(identifier));
 	}
 }
