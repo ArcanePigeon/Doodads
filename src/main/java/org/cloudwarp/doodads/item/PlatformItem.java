@@ -7,10 +7,12 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.network.message.MessageType;
+import net.minecraft.network.MessageType;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
@@ -39,7 +41,7 @@ public class PlatformItem extends BlockItem {
 					PlayerEntity playerEntity = context.getPlayer();
 					int j = world.getTopY();
 					if (!(playerEntity instanceof ServerPlayerEntity) || mutable.getY() < j) break;
-					((ServerPlayerEntity)playerEntity).sendMessageToClient(Text.translatable("build.tooHigh", new Object[]{j - 1}).formatted(Formatting.RED), true);
+					((ServerPlayerEntity)playerEntity).sendMessage((new TranslatableText("build.tooHigh", new Object[]{j - 1})).formatted(Formatting.RED), MessageType.GAME_INFO, Util.NIL_UUID);
 					break;
 				}
 				blockState = world.getBlockState(mutable);

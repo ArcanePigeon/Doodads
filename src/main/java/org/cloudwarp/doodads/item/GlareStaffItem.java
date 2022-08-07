@@ -18,6 +18,7 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -43,7 +44,7 @@ public class GlareStaffItem extends Item {
 
 	@Override
 	public void appendTooltip (ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-			tooltip.add(Text.translatable("item.doodads." + doodadsItemType.name + ".tooltip"));
+			tooltip.add(new TranslatableText("item.doodads." + doodadsItemType.name + ".tooltip"));
 	}
 
 	public ActionResult useOnBlock (ItemUsageContext context) {
@@ -77,7 +78,7 @@ public class GlareStaffItem extends Item {
 		}
 		BlockSoundGroup blockSoundGroup = blockState2.getSoundGroup();
 		world.playSound(playerEntity, blockPos, this.getPlaceSound(blockState2), SoundCategory.BLOCKS, (blockSoundGroup.getVolume() + 1.0f) / 2.0f, blockSoundGroup.getPitch() * 0.8f);
-		world.emitGameEvent(GameEvent.BLOCK_PLACE, blockPos, GameEvent.Emitter.of(playerEntity, blockState2));
+		world.emitGameEvent(playerEntity, GameEvent.BLOCK_PLACE, blockPos);
 		return ActionResult.success(world.isClient);
 	}
 	protected boolean place(ItemPlacementContext context, BlockState state) {

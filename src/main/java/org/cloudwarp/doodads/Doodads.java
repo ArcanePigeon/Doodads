@@ -63,7 +63,7 @@ public class Doodads implements ModInitializer {
 					Criteria.ITEM_USED_ON_BLOCK.trigger((ServerPlayerEntity) player, pos, new ItemStack(DItems.get(BEAVER_TEETH.name)));
 				}
 				world.setBlockState(pos, (BlockState)optional.get(), Block.NOTIFY_ALL | Block.REDRAW_ON_MAIN_THREAD);
-				world.emitGameEvent(GameEvent.BLOCK_CHANGE, pos, GameEvent.Emitter.of(player, (BlockState)optional.get()));
+				world.emitGameEvent(player, GameEvent.BLOCK_CHANGE, pos);
 				return ActionResult.SUCCESS;
 			}
 			return ActionResult.PASS;

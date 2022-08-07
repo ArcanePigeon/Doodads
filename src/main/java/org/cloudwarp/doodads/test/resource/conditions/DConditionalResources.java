@@ -8,7 +8,7 @@ import org.cloudwarp.doodads.Doodads;
 
 public class DConditionalResources {
 
-	@GameTest(templateName = FabricGameTest.EMPTY_STRUCTURE)
+	@GameTest(structureName = FabricGameTest.EMPTY_STRUCTURE)
 	public void conditionalRecipes(TestContext context) {
 		RecipeManager manager = context.getWorld().getRecipeManager();
 

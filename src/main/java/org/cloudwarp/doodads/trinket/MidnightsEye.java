@@ -15,6 +15,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.world.LightType;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
@@ -43,6 +44,6 @@ public class MidnightsEye extends TrinketItem {
 
 	@Override
 	public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-		tooltip.add(Text.translatable("item.doodads."+ MIDNIGHTS_EYE.name +".tooltip"));
+		tooltip.add(new TranslatableText("item.doodads."+ MIDNIGHTS_EYE.name +".tooltip"));
 	}
 }

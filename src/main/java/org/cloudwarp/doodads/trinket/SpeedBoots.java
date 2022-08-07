@@ -13,6 +13,7 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
@@ -35,9 +36,9 @@ public class SpeedBoots extends TrinketItem {
 	@Override
 	public void appendTooltip (ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
 		if (Screen.hasShiftDown()) {
-			tooltip.add(Text.translatable("item.doodads." + SPEED_BOOTS.name + ".tooltip.shift"));
+			tooltip.add(new TranslatableText("item.doodads." + SPEED_BOOTS.name + ".tooltip.shift"));
 		} else {
-			tooltip.add(Text.translatable("item.doodads.generic_tooltip"));
+			tooltip.add(new TranslatableText("item.doodads.generic_tooltip"));
 		}
 	}
 }

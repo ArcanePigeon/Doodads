@@ -13,6 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.LightType;
@@ -59,6 +60,6 @@ public class GlarePlushie extends TrinketItem {
 
 	@Override
 	public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-		tooltip.add(Text.translatable("item.doodads."+ GLARE_PLUSHIE.name +".tooltip"));
+		tooltip.add(new TranslatableText("item.doodads."+ GLARE_PLUSHIE.name +".tooltip"));
 	}
 }

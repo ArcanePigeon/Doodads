@@ -327,7 +327,7 @@ public abstract class SlingShotProjectileEntity extends ProjectileEntity {
 	public void applyEnchantmentEffects(LivingEntity entity, float damageModifier) {
 		int i = EnchantmentHelper.getEquipmentLevel(Enchantments.POWER, entity);
 		int j = EnchantmentHelper.getEquipmentLevel(Enchantments.PUNCH, entity);
-		this.setDamage((double)(damageModifier * 2.0F) + this.random.nextTriangular((double)this.world.getDifficulty().getId() * 0.11, 0.57425));
+		this.setDamage((double)(damageModifier * 2.0F) + this.random.nextGaussian() * 0.25 + (double)((float)this.world.getDifficulty().getId() * 0.11F));
 		if (i > 0) {
 			this.setDamage(this.getDamage() + (double)i * 0.5 + 0.5);
 		}

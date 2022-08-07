@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.stat.Stats;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
@@ -58,9 +59,9 @@ public class MagicPlum extends Item {
 	@Override
 	public void appendTooltip (ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
 		if (Screen.hasShiftDown()) {
-			tooltip.add(Text.translatable("item.doodads." + doodadsItemType.name + ".tooltip.shift"));
+			tooltip.add(new TranslatableText("item.doodads." + doodadsItemType.name + ".tooltip.shift"));
 		} else {
-			tooltip.add(Text.translatable("item.doodads.generic_tooltip"));
+			tooltip.add(new TranslatableText("item.doodads.generic_tooltip"));
 		}
 	}
 

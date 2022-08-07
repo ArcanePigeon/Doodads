@@ -16,6 +16,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -40,11 +41,11 @@ public class PaintbrushItem extends Item {
 	@Override
 	public void appendTooltip (ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
 		if (Screen.hasShiftDown()) {
-			tooltip.add(Text.translatable("item.doodads." + doodadsItemType.name + ".tooltip.shift"));
-			tooltip.add(Text.translatable("item.doodads." + doodadsItemType.name + ".tooltip2.shift"));
-			tooltip.add(Text.translatable("item.doodads." + doodadsItemType.name + ".tooltip3.shift"));
+			tooltip.add(new TranslatableText("item.doodads." + doodadsItemType.name + ".tooltip.shift"));
+			tooltip.add(new TranslatableText("item.doodads." + doodadsItemType.name + ".tooltip2.shift"));
+			tooltip.add(new TranslatableText("item.doodads." + doodadsItemType.name + ".tooltip3.shift"));
 		} else {
-			tooltip.add(Text.translatable("item.doodads.generic_tooltip"));
+			tooltip.add(new TranslatableText("item.doodads.generic_tooltip"));
 		}
 	}
 
@@ -75,7 +76,7 @@ public class PaintbrushItem extends Item {
 				world.setBlockState(pos, color.banner.getDefaultState().with(BannerBlock.ROTATION, state.get(BannerBlock.ROTATION)));
 			}
 			success = true;
-		} else if (state.isIn(BlockTags.WOOL_CARPETS)) {
+		} else if (state.isIn(DTagKeys.WOOL_CARPETS)) {
 			if (world.isClient) {
 				playSound(world, player, pos);
 				return ActionResult.SUCCESS;

@@ -150,7 +150,7 @@ public class RubberBandEntity extends PersistentProjectileEntity {
 
 	@Override
 	protected SoundEvent getHitSound() {
-		return SoundEvents.BLOCK_MUD_HIT;
+		return SoundEvents.BLOCK_CORAL_BLOCK_HIT;
 	}
 
 	@Override

@@ -27,9 +27,10 @@ import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Matrix3f;
 import net.minecraft.util.math.Matrix4f;
 import net.minecraft.util.math.Vec3f;
-import net.minecraft.util.math.random.Random;
 import org.cloudwarp.doodads.Doodads;
 import org.cloudwarp.doodads.entities.RubberBandEntity;
+
+import java.util.Random;
 
 import static org.cloudwarp.doodads.utils.DoodadsItemTypes.RUBBER_BAND;
 
@@ -37,7 +38,7 @@ import static org.cloudwarp.doodads.utils.DoodadsItemTypes.RUBBER_BAND;
 public class RubberBandEntityRenderer extends EntityRenderer<RubberBandEntity> {
 	public static final Identifier TEXTURE = Doodads.id("textures/item/rubber_band.png");
 	private final ItemRenderer itemRenderer;
-	private final Random random = Random.create();
+	private final Random random = new Random();
 	public RubberBandEntityRenderer(EntityRendererFactory.Context context) {
 		super(context);
 		this.itemRenderer = context.getItemRenderer();

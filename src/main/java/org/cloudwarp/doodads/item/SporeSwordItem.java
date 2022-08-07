@@ -18,6 +18,7 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.tag.BlockTags;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.cloudwarp.doodads.utils.DoodadsItemTypes;
@@ -41,7 +42,7 @@ public class SporeSwordItem extends SwordItem{
 
 	@Override
 	public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-		tooltip.add(Text.translatable("item.doodads."+ doodadsItemType.name +".tooltip"));
+		tooltip.add(new TranslatableText("item.doodads."+ doodadsItemType.name +".tooltip"));
 	}
 	@Override
 	public boolean canMine(BlockState state, World world, BlockPos pos, PlayerEntity miner) {

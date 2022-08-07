@@ -5,6 +5,7 @@ import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.world.World;
 import org.cloudwarp.doodads.utils.DoodadsItemTypes;
 import org.jetbrains.annotations.Nullable;
@@ -22,7 +23,7 @@ public class DoodadsItem extends Item {
 
 	@Override
 	public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-		tooltip.add(Text.translatable("item.doodads."+ doodadsItemType.name +".tooltip"));
+		tooltip.add(new TranslatableText("item.doodads."+ doodadsItemType.name +".tooltip"));
 	}
 
 }

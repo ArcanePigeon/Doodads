@@ -13,6 +13,7 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.world.World;
 import org.cloudwarp.doodads.utils.DoodadsItemTypes;
 import org.jetbrains.annotations.Nullable;
@@ -29,10 +30,10 @@ public class BeaverTeeth extends TrinketItem {
 	@Override
 	public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
 		if(Screen.hasShiftDown()){
-			tooltip.add(Text.translatable("item.doodads."+ BEAVER_TEETH.name +".tooltip.shift"));
-			tooltip.add(Text.translatable("item.doodads."+ BEAVER_TEETH.name +".tooltip2.shift"));
+			tooltip.add(new TranslatableText("item.doodads."+ BEAVER_TEETH.name +".tooltip.shift"));
+			tooltip.add(new TranslatableText("item.doodads."+ BEAVER_TEETH.name +".tooltip2.shift"));
 		}else{
-			tooltip.add(Text.translatable("item.doodads.generic_tooltip"));
+			tooltip.add(new TranslatableText("item.doodads.generic_tooltip"));
 		}
 	}
 }

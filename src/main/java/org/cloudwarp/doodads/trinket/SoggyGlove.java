@@ -11,6 +11,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.property.Properties;
 import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -29,9 +30,9 @@ public class SoggyGlove extends TrinketItem {
 	@Override
 	public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
 		if(Screen.hasShiftDown()){
-			tooltip.add(Text.translatable("item.doodads."+ SOGGY_GLOVE.name +".tooltip.shift"));
+			tooltip.add(new TranslatableText("item.doodads."+ SOGGY_GLOVE.name +".tooltip.shift"));
 		}else{
-			tooltip.add(Text.translatable("item.doodads.generic_tooltip"));
+			tooltip.add(new TranslatableText("item.doodads.generic_tooltip"));
 		}
 	}
 }
