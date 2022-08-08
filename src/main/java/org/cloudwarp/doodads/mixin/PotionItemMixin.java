@@ -36,7 +36,7 @@ public abstract class PotionItemMixin {
 			locals = LocalCapture.CAPTURE_FAILSOFT
 	)
 	private void BendyStrawDurationModification (ItemStack stack, World world, LivingEntity user, CallbackInfoReturnable<ItemStack> cir, PlayerEntity playerEntity, List list, Iterator var6, StatusEffectInstance statusEffectInstance) {
-		boolean isWearingStraw = TrinketsApi.getTrinketComponent((LivingEntity) ((Object) playerEntity)).get().isEquipped(BENDY_STRAW.item());
+		boolean isWearingStraw = TrinketsApi.getTrinketComponent((LivingEntity) ((Object) user)).get().isEquipped(BENDY_STRAW.item());
 		if (isWearingStraw) {
 			if (! statusEffectInstance.getEffectType().isInstant()) {
 				statusEffectInstance = new StatusEffectInstance(
