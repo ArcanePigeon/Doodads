@@ -1,25 +1,25 @@
 {
   "replace": false,
   "values": [
+    "doodads:ender_goggles",
+    "doodads:celestial_ring",
+    "doodads:glare_plushie",
+    "doodads:scissors",
     "doodads:spore_sword",
     "doodads:bendy_straw",
-    "doodads:celestial_ring",
-    "doodads:duct_tape",
-    "doodads:sun_ring",
-    "doodads:blossom_belt",
-    "doodads:soggy_glove",
     "doodads:cactus_ring",
-    "doodads:moon_ring",
-    "doodads:speed_boots",
-    "doodads:midnights_eye",
     "doodads:slimey_shoes",
     "doodads:shulker_aglet",
-    "doodads:ender_goggles",
-    "doodads:glare_staff",
-    "doodads:loggers_glove",
-    "doodads:glare_plushie",
     "doodads:paintbrush",
+    "doodads:speed_boots",
+    "doodads:soggy_glove",
     "doodads:beaver_teeth",
-    "doodads:scissors"
+    "doodads:sun_ring",
+    "doodads:blossom_belt",
+    "doodads:duct_tape",
+    "doodads:moon_ring",
+    "doodads:midnights_eye",
+    "doodads:loggers_glove",
+    "doodads:glare_staff"
   ]
 }
