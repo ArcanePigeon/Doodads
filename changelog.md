@@ -37,3 +37,13 @@ All notable changes to this project will be documented in this file.
 - Platforms
 ### Compatibility
 - Probably Chests
+
+## [0.1.1] - 8/7/2022
+### Changed
+- Portable Nether recipe now requires ghast tear instead of lava
+### Fixed
+- Blocks missing tool assignments
+
+## [0.1.2] - 8/8/2022
+### Fixed
+- Crash when non player entity drinks potion
